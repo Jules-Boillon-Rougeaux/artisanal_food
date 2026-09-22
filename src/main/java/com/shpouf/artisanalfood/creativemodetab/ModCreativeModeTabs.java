@@ -33,6 +33,7 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "azurite_items_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.AZURITE_BLOCK);
+                        output.accept(ModBlocks.AZURITE_ORE);
 
                     }).build());
 

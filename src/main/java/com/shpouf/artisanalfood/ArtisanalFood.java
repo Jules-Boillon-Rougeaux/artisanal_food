@@ -59,6 +59,7 @@ public class ArtisanalFood {
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.AZURITE_BLOCK);
+            event.accept(ModBlocks.AZURITE_ORE);
         }
     }
 

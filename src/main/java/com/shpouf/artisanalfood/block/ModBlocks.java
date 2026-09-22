@@ -20,6 +20,11 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
             ));
 
+    public static final DeferredBlock<Block> AZURITE_ORE = registerBlock("azurite_ore",
+            properties -> new Block(properties.strength(3f)
+                    .requiresCorrectToolForDrops()
+            ));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
         registerBlockItem(name, toReturn);
