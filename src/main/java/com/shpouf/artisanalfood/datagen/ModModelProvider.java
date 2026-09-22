@@ -1,6 +1,7 @@
 package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
+import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -17,5 +18,9 @@ public class ModModelProvider extends ModelProvider {
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         itemModels.generateFlatItem(ModItems.AZURITE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RAW_AZURITE.get(), ModelTemplates.FLAT_ITEM);
+
+        /* BLOCKS */
+        blockModels.createTrivialCube(ModBlocks.AZURITE_BLOCK.get());
+
     }
 }

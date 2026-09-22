@@ -1,6 +1,10 @@
 {
   "item.artisanalfood.azurite": "Azurite",
   "item.artisanalfood.raw_azurite": "raw Azurite",
+
+  "block.artisanalfood.azurite_block": "Azurite block",
+
+
   "creativetab.artisanalfood.azurite_items": "Azurite items",
   "creativetab.artisanalfood.azurite_blocks": "Azurite block"
 }

@@ -1,6 +1,7 @@
 package com.shpouf.artisanalfood.creativemodetab;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
+import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -27,11 +28,11 @@ public class ModCreativeModeTabs {
                     }).build());
 
     public static final Supplier<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RAW_AZURITE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.AZURITE_BLOCK.get()))
                     .title(Component.translatable("creativetab.artisanalfood.azurite_blocks"))
                     .withTabsBefore(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "azurite_items_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.RAW_AZURITE);
+                        output.accept(ModBlocks.AZURITE_BLOCK);
 
                     }).build());
 

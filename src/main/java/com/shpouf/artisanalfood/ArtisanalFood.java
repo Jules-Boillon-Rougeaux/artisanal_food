@@ -1,5 +1,6 @@
 package com.shpouf.artisanalfood;
 
+import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.creativemodetab.ModCreativeModeTabs;
 import com.shpouf.artisanalfood.item.ModItems;
 import org.slf4j.Logger;
@@ -36,6 +37,7 @@ public class ArtisanalFood {
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         // Register the item to a creative tab
@@ -53,6 +55,10 @@ public class ArtisanalFood {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.AZURITE);
             event.accept(ModItems.RAW_AZURITE);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.AZURITE_BLOCK);
         }
     }
 
