@@ -1,6 +1,6 @@
 package com.shpouf.artisanalfood;
 
-import net.minecraft.client.data.models.ModelProvider;
+import com.shpouf.artisanalfood.datagen.ModModelProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -14,6 +14,6 @@ public class ArtisanalFoodDataGen {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
 
-        generator.addProvider(true, new ModelProvider(packOutput));
+        generator.addProvider(true, new ModModelProvider(packOutput));
     }
 }
