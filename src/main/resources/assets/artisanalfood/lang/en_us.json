@@ -1,13 +1,3 @@
 {
-  "itemGroup.artisanalfood": "Example Mod Tab",
-  "block.artisanalfood.example_block": "Example Block",
-  "item.artisanalfood.example_item": "Example Item",
-
-  "artisanalfood.configuration.title": "Artisanal Food Configs",
-  "artisanalfood.configuration.section.artisanalfood.common.toml": "Artisanal Food Configs",
-  "artisanalfood.configuration.section.artisanalfood.common.toml.title": "Artisanal Food Configs",
-  "artisanalfood.configuration.items": "Item List",
-  "artisanalfood.configuration.logDirtBlock": "Log Dirt Block",
-  "artisanalfood.configuration.magicNumberIntroduction": "Magic Number Text",
-  "artisanalfood.configuration.magicNumber": "Magic Number"
+  "item.artisanalfood.azurite": "Azurite"
 }
