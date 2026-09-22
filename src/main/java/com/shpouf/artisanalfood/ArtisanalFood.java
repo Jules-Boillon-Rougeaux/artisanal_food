@@ -1,5 +1,6 @@
 package com.shpouf.artisanalfood;
 
+import com.shpouf.artisanalfood.creativemodetab.ModCreativeModeTabs;
 import com.shpouf.artisanalfood.item.ModItems;
 import org.slf4j.Logger;
 
@@ -31,6 +32,8 @@ public class ArtisanalFood {
     public ArtisanalFood(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
 
