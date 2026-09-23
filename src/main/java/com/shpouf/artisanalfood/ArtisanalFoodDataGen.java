@@ -3,6 +3,7 @@ package com.shpouf.artisanalfood;
 import com.shpouf.artisanalfood.datagen.ModBlockLootTableProvider;
 import com.shpouf.artisanalfood.datagen.ModBlockTagsProvider;
 import com.shpouf.artisanalfood.datagen.ModModelProvider;
+import com.shpouf.artisanalfood.datagen.ModRecipeProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -27,5 +28,6 @@ public class ArtisanalFoodDataGen {
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
+        generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
     }
 }
