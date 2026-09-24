@@ -44,39 +44,39 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
-                .define('A', ModItems.AZURITE.get())
-                .unlockedBy(getHasName(ModItems.AZURITE.get()), has(ModItems.AZURITE))
+                .define('A', ModItems.SALT.get())
+                .unlockedBy(getHasName(ModItems.SALT.get()), has(ModItems.SALT))
                 .group("azurite")
                 .save(output, "artisanalfood:azurite_block_compression");
 
-        shapeless(RecipeCategory.MISC, ModItems.AZURITE.get(), 9)
+        shapeless(RecipeCategory.MISC, ModItems.SALT.get(), 9)
                 .requires(ModBlocks.AZURITE_BLOCK)
                 .unlockedBy(getHasName(ModBlocks.AZURITE_BLOCK.get()), has(ModBlocks.AZURITE_BLOCK))
                 .group("azurite")
                 .save(output, "artisanalfood:azurite_decompression");
 
 
-        SimpleCookingRecipeBuilder.smelting(
-                Ingredient.of(ModItems.RAW_AZURITE.get()),
-                RecipeCategory.MISC,
-                CookingBookCategory.MISC,
-                ModItems.AZURITE.get(),
-                0.7f,
-                200
-                )
-                .unlockedBy(getHasName(ModItems.RAW_AZURITE.get()), has(ModItems.RAW_AZURITE.get()))
-                .save(output, ArtisanalFood.MOD_ID + ":" + getItemName(ModItems.AZURITE.get()) + "_from_" + getItemName(ModItems.RAW_AZURITE.get()));
+//        SimpleCookingRecipeBuilder.smelting(
+//                Ingredient.of(ModItems.RAW_AZURITE.get()),
+//                RecipeCategory.MISC,
+//                CookingBookCategory.MISC,
+//                ModItems.SALT.get(),
+//                0.7f,
+//                200
+//                )
+//                .unlockedBy(getHasName(ModItems.RAW_AZURITE.get()), has(ModItems.RAW_AZURITE.get()))
+//                .save(output, ArtisanalFood.MOD_ID + ":" + getItemName(ModItems.AZURITE.get()) + "_from_" + getItemName(ModItems.RAW_AZURITE.get()));
 
-        SimpleCookingRecipeBuilder.blasting(
-                Ingredient.of(ModItems.RAW_AZURITE.get()),
-                RecipeCategory.MISC,
-                CookingBookCategory.MISC,
-                ModItems.AZURITE.get(),
-                0.7f,
-                100
-                )
-                .unlockedBy(getHasName(ModItems.RAW_AZURITE.get()), has(ModItems.RAW_AZURITE.get()))
-                .save(output, ArtisanalFood.MOD_ID + ":blast_" + getItemName(ModItems.AZURITE.get()) + "_from_" + getItemName(ModItems.RAW_AZURITE.get()));
+//        SimpleCookingRecipeBuilder.blasting(
+//                Ingredient.of(ModItems.RAW_AZURITE.get()),
+//                RecipeCategory.MISC,
+//                CookingBookCategory.MISC,
+//                ModItems.AZURITE.get(),
+//                0.7f,
+//                100
+//                )
+//                .unlockedBy(getHasName(ModItems.RAW_AZURITE.get()), has(ModItems.RAW_AZURITE.get()))
+//                .save(output, ArtisanalFood.MOD_ID + ":blast_" + getItemName(ModItems.AZURITE.get()) + "_from_" + getItemName(ModItems.RAW_AZURITE.get()));
 
 
     }
