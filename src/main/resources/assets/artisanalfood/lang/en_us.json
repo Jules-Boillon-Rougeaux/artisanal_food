@@ -22,10 +22,15 @@
   "item.artisanalfood.bell_pepper_seeds": "Bell Pepper Seeds",
   "item.artisanalfood.zucchini_seeds": "Zucchini Seeds",
 
-  "block.artisanalfood.azurite_block": "Azurite block",
-  "block.artisanalfood.azurite_ore": "Azurite ore block",
+  "block.artisanalfood.salt_ore": "Salt Ore",
+  "block.artisanalfood.deepslate_salt_ore": "Deepslate Salt Ore",
 
+  "block.artisanalfood.charcoal_block": "Block of Charcoal",
+  "block.artisanalfood.salt_block": "Block of Salt",
+  "block.artisanalfood.polished_salt_block": "Polished Block of Salt",
+  "block.artisanalfood.salt_bricks": "Salt Bricks",
+  "block.artisanalfood.chiseled_salt_bricks": "Chiseled Salt Bricks",
 
-  "creativetab.artisanalfood.azurite_items": "Azurite items",
-  "creativetab.artisanalfood.azurite_blocks": "Azurite block"
+"creativetab.artisanalfood.af_blocks": "AF Blocks",
+  "creativetab.artisanalfood.af_items": "AF Items"
 }

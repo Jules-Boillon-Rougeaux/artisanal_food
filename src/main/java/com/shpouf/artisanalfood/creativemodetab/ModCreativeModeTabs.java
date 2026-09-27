@@ -17,21 +17,26 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ArtisanalFood.MOD_ID);
 
-    public static final Supplier<CreativeModeTab> AZURITE_ITEMS_TAB = CREATIVE_MODE_TABS.register("azurite_items_tab",
+    public static final Supplier<CreativeModeTab> AF_ITEMS_TAB = CREATIVE_MODE_TABS.register("af_items_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RED_BELL_PEPPER.get()))
-                    .title(Component.translatable("creativetab.artisanalfood.azurite_items"))
-                    .withTabsAfter(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "azurite_blocks_tab"))
+                    .title(Component.translatable("creativetab.artisanalfood.af_items"))
+                    .withTabsAfter(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "af_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.RED_BELL_PEPPER);
-                        output.accept(ModItems.ZUCCHINI);
-                        output.accept(ModItems.CORN);
-                        output.accept(ModItems.CORNSTARCH);
-                        output.accept(ModItems.EGGPLANT);
+                        output.accept(ModItems.CORN_SEEDS);
+                        output.accept(ModItems.BELL_PEPPER_SEEDS);
+                        output.accept(ModItems.EGGPLANT_SEEDS);
+                        output.accept(ModItems.ZUCCHINI_SEEDS);
 
-                        output.accept(ModItems.RAMEKIN);
+                        output.accept(ModItems.CORN);
+                        output.accept(ModItems.RED_BELL_PEPPER);
+                        output.accept(ModItems.EGGPLANT);
+                        output.accept(ModItems.ZUCCHINI);
+
                         output.accept(ModItems.WHEAT_FLOUR);
                         output.accept(ModItems.SALT);
                         output.accept(ModItems.SPARKLING_POWDER);
+                        output.accept(ModItems.CORNSTARCH);
+                        output.accept(ModItems.RAMEKIN);
 
                         output.accept(ModItems.CREME_BRULEE);
                         output.accept(ModItems.BOWL_OF_RATATOUILLE);
@@ -39,21 +44,20 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.MINI_CHARCOAL);
                         output.accept(ModItems.MINI_COAL);
-
-                        output.accept(ModItems.CORN_SEEDS);
-                        output.accept(ModItems.EGGPLANT_SEEDS);
-                        output.accept(ModItems.BELL_PEPPER_SEEDS);
-                        output.accept(ModItems.ZUCCHINI_SEEDS);
                     }).build());
 
-    public static final Supplier<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.AZURITE_BLOCK.get()))
-                    .title(Component.translatable("creativetab.artisanalfood.azurite_blocks"))
-                    .withTabsBefore(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "azurite_items_tab"))
+    public static final Supplier<CreativeModeTab> AF_BLOCKS_TAB = CREATIVE_MODE_TABS.register("af_blocks_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.SALT_BLOCK.get()))
+                    .title(Component.translatable("creativetab.artisanalfood.af_blocks"))
+                    .withTabsBefore(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "af_items_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModBlocks.AZURITE_BLOCK);
-                        output.accept(ModBlocks.AZURITE_ORE);
-
+                        output.accept(ModBlocks.CHARCOAL_BLOCK);
+                        output.accept(ModBlocks.SALT_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_SALT_ORE);
+                        output.accept(ModBlocks.SALT_BLOCK);
+                        output.accept(ModBlocks.POLISHED_SALT_BLOCK);
+                        output.accept(ModBlocks.SALT_BRICKS);
+                        output.accept(ModBlocks.CHISELED_SALT_BRICKS);
                     }).build());
 
     public static void register(IEventBus eventBus) {

@@ -41,8 +41,12 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.ZUCCHINI_SEEDS.get(), ModelTemplates.FLAT_ITEM);
 
         /* BLOCKS */
-        blockModels.createTrivialCube(ModBlocks.AZURITE_BLOCK.get());
-        blockModels.createTrivialCube(ModBlocks.AZURITE_ORE.get());
-
+        blockModels.createTrivialCube(ModBlocks.SALT_ORE.get());
+        blockModels.createTrivialCube(ModBlocks.DEEPSLATE_SALT_ORE.get());
+        blockModels.createTrivialCube(ModBlocks.CHARCOAL_BLOCK.get());
+        blockModels.createTrivialCube(ModBlocks.SALT_BLOCK.get());
+        blockModels.createTrivialCube(ModBlocks.POLISHED_SALT_BLOCK.get());
+        blockModels.createTrivialCube(ModBlocks.SALT_BRICKS.get());
+        blockModels.createTrivialCube(ModBlocks.CHISELED_SALT_BRICKS.get());
     }
 }

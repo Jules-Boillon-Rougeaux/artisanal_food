@@ -5,10 +5,9 @@ import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -40,20 +39,67 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
-        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.AZURITE_BLOCK.get())
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_BLOCK.get())
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
                 .define('A', ModItems.SALT.get())
                 .unlockedBy(getHasName(ModItems.SALT.get()), has(ModItems.SALT))
-                .group("azurite")
-                .save(output, "artisanalfood:azurite_block_compression");
+                .group("salt")
+                .save(output, "artisanalfood:salt_block_from_salt_craft");
 
         shapeless(RecipeCategory.MISC, ModItems.SALT.get(), 9)
-                .requires(ModBlocks.AZURITE_BLOCK)
-                .unlockedBy(getHasName(ModBlocks.AZURITE_BLOCK.get()), has(ModBlocks.AZURITE_BLOCK))
-                .group("azurite")
-                .save(output, "artisanalfood:azurite_decompression");
+                .requires(ModBlocks.SALT_BLOCK)
+                .unlockedBy(getHasName(ModBlocks.SALT_BLOCK.get()), has(ModBlocks.SALT_BLOCK))
+                .group("salt")
+                .save(output, "artisanalfood:salt_from_salt_block_craft");
+
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHARCOAL_BLOCK.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', Items.CHARCOAL)
+                .unlockedBy(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
+                .group("charcoal")
+                .save(output, "artisanalfood:charcoal_block_from_charcoal_craft");
+
+        shapeless(RecipeCategory.MISC, Items.CHARCOAL, 9)
+                .requires(ModBlocks.CHARCOAL_BLOCK)
+                .unlockedBy(getHasName(ModBlocks.CHARCOAL_BLOCK.get()), has(ModBlocks.CHARCOAL_BLOCK))
+                .group("charcoal")
+                .save(output, "artisanalfood:charcoal_from_charcoal_block_craft");
+
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_SALT_BLOCK.get())
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', ModBlocks.SALT_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.SALT_BLOCK.get()), has(ModBlocks.SALT_BLOCK))
+                .group("salt")
+                .save(output, "artisanalfood:polished_salt_block_craft");
+
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_BRICKS.get())
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', ModBlocks.POLISHED_SALT_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.POLISHED_SALT_BLOCK.get()), has(ModBlocks.POLISHED_SALT_BLOCK))
+                .group("salt")
+                .save(output, "artisanalfood:salt_bricks_craft");
+
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_SALT_BRICKS.get())
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', ModBlocks.SALT_BRICKS.get())
+                .unlockedBy(getHasName(ModBlocks.SALT_BRICKS.get()), has(ModBlocks.SALT_BRICKS))
+                .group("salt")
+                .save(output, "artisanalfood:chiseled_salt_bricks_craft");
+
+
+        addStonecutterRecipe(ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BLOCK.get(), 1);
+        addStonecutterRecipe(ModBlocks.SALT_BRICKS.get(), ModBlocks.SALT_BLOCK.get(), 1);
+        addStonecutterRecipe(ModBlocks.SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1);
+        addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BLOCK.get(), 1);
+        addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1);
+        addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BRICKS.get(), 1);
 
 
 //        SimpleCookingRecipeBuilder.smelting(
@@ -78,6 +124,12 @@ public class ModRecipeProvider extends RecipeProvider {
 //                .unlockedBy(getHasName(ModItems.RAW_AZURITE.get()), has(ModItems.RAW_AZURITE.get()))
 //                .save(output, ArtisanalFood.MOD_ID + ":blast_" + getItemName(ModItems.AZURITE.get()) + "_from_" + getItemName(ModItems.RAW_AZURITE.get()));
 
+
+    }
+    private void addStonecutterRecipe(ItemLike result, ItemLike base, int count) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.BUILDING_BLOCKS, result, count)
+                .unlockedBy(getHasName(base), this.has(base))
+                .save(this.output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base) + "_stonecutting");
 
     }
 

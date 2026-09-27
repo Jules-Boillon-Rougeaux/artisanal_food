@@ -17,12 +17,21 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.AZURITE_ORE.get())
-                .add(ModBlocks.AZURITE_BLOCK.get());
+                .add(ModBlocks.SALT_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SALT_ORE.get())
+                .add(ModBlocks.CHARCOAL_BLOCK.get())
+                .add(ModBlocks.SALT_BLOCK.get())
+                .add(ModBlocks.POLISHED_SALT_BLOCK.get())
+                .add(ModBlocks.SALT_BRICKS.get())
+                .add(ModBlocks.CHISELED_SALT_BRICKS.get());
 
-        tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.AZURITE_ORE.get())
-                .add(ModBlocks.AZURITE_BLOCK.get());
+        tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.SALT_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SALT_ORE.get())
+                .add(ModBlocks.SALT_BLOCK.get())
+                .add(ModBlocks.POLISHED_SALT_BLOCK.get())
+                .add(ModBlocks.SALT_BRICKS.get())
+                .add(ModBlocks.CHISELED_SALT_BRICKS.get());
 
     }
 }

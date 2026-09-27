@@ -38,8 +38,6 @@ public class ArtisanalFood {
         ModBlocks.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -48,39 +46,6 @@ public class ArtisanalFood {
 
     }
 
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            //TODO : Mettre  dans les bons creative tabs
-            event.accept(ModItems.RED_BELL_PEPPER);
-            event.accept(ModItems.ZUCCHINI);
-            event.accept(ModItems.CORN);
-            event.accept(ModItems.EGGPLANT);
-
-            event.accept(ModItems.CORNSTARCH);
-            event.accept(ModItems.RAMEKIN);
-            event.accept(ModItems.WHEAT_FLOUR);
-            event.accept(ModItems.SALT);
-            event.accept(ModItems.SPARKLING_POWDER);
-
-            event.accept(ModItems.CREME_BRULEE);
-            event.accept(ModItems.BOWL_OF_RATATOUILLE);
-            event.accept(ModItems.VEGETABLE_SOUP);
-
-            event.accept(ModItems.MINI_CHARCOAL);
-            event.accept(ModItems.MINI_COAL);
-
-            event.accept(ModItems.CORN_SEEDS);
-            event.accept(ModItems.EGGPLANT_SEEDS);
-            event.accept(ModItems.BELL_PEPPER_SEEDS);
-            event.accept(ModItems.ZUCCHINI_SEEDS);
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.AZURITE_BLOCK);
-            event.accept(ModBlocks.AZURITE_ORE);
-        }
-    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

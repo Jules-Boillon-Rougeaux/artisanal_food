@@ -14,16 +14,28 @@ import java.util.function.Function;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ArtisanalFood.MOD_ID);
-
-    public static final DeferredBlock<Block> AZURITE_BLOCK = registerBlock("azurite_block",
-            properties -> new Block(properties.strength(4f)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final DeferredBlock<Block> AZURITE_ORE = registerBlock("azurite_ore",
+        //TODO : Arranger le destroy time
+    public static final DeferredBlock<Block> SALT_ORE = registerBlock("salt_ore",
             properties -> new Block(properties.strength(3f)
-                    .requiresCorrectToolForDrops()
-            ));
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> DEEPSLATE_SALT_ORE = registerBlock("deepslate_salt_ore",
+            properties -> new Block(properties.strength(4.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHARCOAL_BLOCK = registerBlock("charcoal_block",
+            properties -> new Block(properties.strength(5f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> SALT_BLOCK = registerBlock("salt_block",
+            properties -> new Block(properties.strength(3f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_SALT_BLOCK = registerBlock("polished_salt_block",
+            properties -> new Block(properties.strength(3f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> SALT_BRICKS = registerBlock("salt_bricks",
+            properties -> new Block(properties.strength(3f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_SALT_BRICKS = registerBlock("chiseled_salt_bricks",
+            properties -> new Block(properties.strength(3f)
+                    .requiresCorrectToolForDrops()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

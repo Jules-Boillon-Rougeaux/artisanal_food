@@ -28,10 +28,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.AZURITE_BLOCK.get());
+        dropSelf(ModBlocks.CHARCOAL_BLOCK.get());
+        dropSelf(ModBlocks.SALT_BLOCK.get());
+        dropSelf(ModBlocks.POLISHED_SALT_BLOCK.get());
+        dropSelf(ModBlocks.SALT_BRICKS.get());
+        dropSelf(ModBlocks.CHISELED_SALT_BRICKS.get());
 
-        add(ModBlocks.AZURITE_ORE.get(),
-                createMultipleOreDrops(ModBlocks.AZURITE_ORE.get(), ModItems.SALT.get(), 2F, 4F));
+        add(ModBlocks.SALT_ORE.get(),
+                createMultipleOreDrops(ModBlocks.SALT_ORE.get(), ModItems.SALT.get(), 2F, 4F));
+        add(ModBlocks.DEEPSLATE_SALT_ORE.get(),
+                createMultipleOreDrops(ModBlocks.DEEPSLATE_SALT_ORE.get(), ModItems.SALT.get(), 2F, 4F));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float minDrops, float maxDrops) {
