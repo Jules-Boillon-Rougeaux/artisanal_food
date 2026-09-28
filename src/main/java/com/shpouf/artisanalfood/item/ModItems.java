@@ -1,6 +1,7 @@
 package com.shpouf.artisanalfood.item;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
+import com.shpouf.artisanalfood.food.ModFoods;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -20,7 +21,8 @@ public class ModItems {
     public static final DeferredItem<Item> SALT = ITEMS.registerSimpleItem("salt");
     public static final DeferredItem<Item> SPARKLING_POWDER = ITEMS.registerSimpleItem("sparkling_powder");
 
-    public static final DeferredItem<Item> CREME_BRULEE = ITEMS.registerSimpleItem("creme_brulee");
+    public static final DeferredItem<Item> CREME_BRULEE = ITEMS.registerItem("creme_brulee",
+            properties -> new Item(properties.food(ModFoods.CREME_BRULEE, ModFoods.CREME_BRULEE_CONSUMABLE)));
     public static final DeferredItem<Item> BOWL_OF_RATATOUILLE = ITEMS.registerSimpleItem("bowl_of_ratatouille");
     public static final DeferredItem<Item> VEGETABLE_SOUP = ITEMS.registerSimpleItem("vegetable_soup");
 
