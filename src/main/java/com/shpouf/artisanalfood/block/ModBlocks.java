@@ -14,7 +14,6 @@ import java.util.function.Function;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ArtisanalFood.MOD_ID);
-        //TODO : Arranger le destroy time
     public static final DeferredBlock<Block> SALT_ORE = registerBlock("salt_ore",
             properties -> new Block(properties.strength(3f)
                     .requiresCorrectToolForDrops()));
