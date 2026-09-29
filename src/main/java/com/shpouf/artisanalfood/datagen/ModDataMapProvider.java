@@ -1,5 +1,6 @@
 package com.shpouf.artisanalfood.datagen;
 
+import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -18,6 +19,7 @@ public class ModDataMapProvider extends DataMapProvider {
     protected void gather(HolderLookup.Provider provider) {
         builder(NeoForgeDataMaps.FURNACE_FUELS)
                 .add(ModItems.MINI_COAL.getId(), new FurnaceFuel(200), false)
-                .add(ModItems.MINI_CHARCOAL.getId(), new FurnaceFuel(200), false);
+                .add(ModItems.MINI_CHARCOAL.getId(), new FurnaceFuel(200), false)
+                .add(ModBlocks.CHARCOAL_BLOCK.getId(), new FurnaceFuel(200*80), false);
     }
 }
