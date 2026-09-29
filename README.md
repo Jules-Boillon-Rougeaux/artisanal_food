@@ -81,4 +81,4 @@ If you have any good idea that would fit, go to the **CurseForge comments sectio
 > **Found a bug?** Please report it on the **project's GitHub repository**.
 
 
-###### MIT License – [see LICENSE](./LICENSE)!
+###### MIT License – [see LICENSE](./LICENSE)
