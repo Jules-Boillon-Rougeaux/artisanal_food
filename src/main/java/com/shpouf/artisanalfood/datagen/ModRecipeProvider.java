@@ -6,6 +6,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.AbstractCookingRecipe;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
@@ -36,8 +38,6 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
-
-
         addSimpleShapelessRecipe(Items.COAL, List.of(ModItems.MINI_COAL.get()), 1, List.of(8), "");
         addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModItems.MINI_CHARCOAL.get()), 1, List.of(8), "");
         addSimpleShapelessRecipe(ModItems.SALT.get(), List.of(ModBlocks.SALT_BLOCK.get()), 9, List.of(1), "");
@@ -64,6 +64,10 @@ public class ModRecipeProvider extends RecipeProvider {
         addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1);
         addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BRICKS.get(), 1);
 
+        List<ItemLike> SALT_SMELTABLES = List.of(ModBlocks.SALT_ORE, ModBlocks.DEEPSLATE_SALT_ORE);
+
+        oreSmelting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 200, "salt");
+        oreBlasting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 100, "salt");
     }
 
     private void addStonecutterRecipe(ItemLike result, ItemLike base, int resultCount) {
@@ -110,4 +114,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .group(getItemName(result))
                 .save(output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base.getFirst()) + "_shapeless");
     }
+
+    @Override
+    protected <T extends AbstractCookingRecipe> void oreCooking(AbstractCookingRecipe.Factory<T> factory, List<ItemLike> smeltables,
+                                                                RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result,
+                                                                float experience, int cookingTime, String group, String fromDesc) {
+        for(ItemLike itemlike : smeltables) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), craftingCategory, cookingCategory, result, experience, cookingTime, factory).group(group).unlockedBy(getHasName(itemlike), has(itemlike))
+                    .save(output, "artisanalfood:" + getItemName(result) + fromDesc + "_" + getItemName(itemlike));
+        }
+    }
+
 }
