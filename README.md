@@ -79,3 +79,6 @@ Suggestions are welcome!
 If you have any good idea that would fit, go to the **CurseForge comments section**?  
 
 > **Found a bug?** Please report it on the **project's GitHub repository**.
+
+
+###### MIT License – [see LICENSE](./LICENSE)!
