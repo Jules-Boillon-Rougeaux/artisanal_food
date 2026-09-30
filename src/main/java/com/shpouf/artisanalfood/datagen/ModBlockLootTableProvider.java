@@ -33,7 +33,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.POLISHED_SALT_BLOCK.get());
         dropSelf(ModBlocks.SALT_BRICKS.get());
         dropSelf(ModBlocks.CHISELED_SALT_BRICKS.get());
+        dropSelf(ModBlocks.SPARKLING_COBBLESTONE.get());
 
+        add(ModBlocks.SPARKLING_GLASS.get(), 
+            createSilkTouchOnlyTable(ModBlocks.SPARKLING_GLASS.get())
+        );
+        
         add(ModBlocks.SALT_ORE.get(),
                 createMultipleOreDrops(ModBlocks.SALT_ORE.get(), ModItems.SALT.get(), 2F, 4F));
         add(ModBlocks.DEEPSLATE_SALT_ORE.get(),

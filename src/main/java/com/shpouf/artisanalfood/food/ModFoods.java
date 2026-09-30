@@ -14,8 +14,8 @@ public class ModFoods {
     public static final FoodProperties CORN = new FoodProperties.Builder().nutrition(2).saturationModifier(0.7f).build();
     public static final Consumable CORN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
 
-    public static final FoodProperties COOKED_CORN = new FoodProperties.Builder().nutrition(3).saturationModifier(1.1f).build();
-    public static final Consumable COOKED_CORN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(0.8F).build();
+    public static final FoodProperties GRILLED_CORN = new FoodProperties.Builder().nutrition(3).saturationModifier(1.1f).build();
+    public static final Consumable GRILLED_CORN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(0.8F).build();
 
     public static final FoodProperties RED_BELL_PEPPER = new FoodProperties.Builder().nutrition(2).saturationModifier(0.7f).build();
     public static final Consumable RED_BELL_PEPPER_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();

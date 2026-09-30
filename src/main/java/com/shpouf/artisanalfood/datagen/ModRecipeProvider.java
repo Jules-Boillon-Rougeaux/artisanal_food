@@ -70,12 +70,15 @@ public class ModRecipeProvider extends RecipeProvider {
         oreSmelting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 200, "salt");
         oreBlasting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 100, "salt");
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 200)
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, 200)
                 .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
                 .save(this.output, "artisanalfood:corn_smelting");
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 100)
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, 100)
                 .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
                 .save(this.output, "artisanalfood:corn_smoking");
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, 600)
+                .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
+                .save(this.output, "artisanalfood:corn_campfire");
 
         shaped(RecipeCategory.FOOD, ModItems.RAMEKIN, 4)
                 .pattern("A A")
@@ -84,6 +87,25 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.TERRACOTTA), has(Items.TERRACOTTA))
                 .group(getItemName(ModItems.RAMEKIN))
                 .save(output, "artisanalfood:ramekin_from_terracotta_shaped");
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SPARKLING_GLASS, 4)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', Items.GLASS)
+                .define('B', ModItems.SPARKLING_POWDER)
+                .unlockedBy(getHasName(ModItems.SPARKLING_POWDER), has(ModItems.SPARKLING_POWDER))
+                .group(getItemName(ModBlocks.SPARKLING_GLASS))
+                .save(output, "artisanalfood:sparkling_glass_from_glass_and_sparkling_powder");
+        shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SPARKLING_COBBLESTONE, 4)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', Items.COBBLESTONE)
+                .define('B', ModItems.SPARKLING_POWDER)
+                .unlockedBy(getHasName(ModItems.SPARKLING_POWDER), has(ModItems.SPARKLING_POWDER))
+                .group(getItemName(ModBlocks.SPARKLING_COBBLESTONE))
+                .save(output, "artisanalfood:sparkling_cobblestone_from_cobblestone_and_sparkling_powder");
+
     }
 
     private void addStonecutterRecipe(ItemLike result, ItemLike base, int resultCount) {

@@ -36,8 +36,8 @@ public class ModItems {
     public static final DeferredItem<Item> SALT = ITEMS.registerSimpleItem("salt");
     public static final DeferredItem<Item> SPARKLING_POWDER = ITEMS.registerSimpleItem("sparkling_powder");
 
-    public static final DeferredItem<Item> COOKED_CORN = ITEMS.registerItem("cooked_corn",
-            properties -> new Item(properties.food(ModFoods.COOKED_CORN, ModFoods.COOKED_CORN_CONSUMABLE)));
+    public static final DeferredItem<Item> GRILLED_CORN = ITEMS.registerItem("grilled_corn",
+            properties -> new Item(properties.food(ModFoods.GRILLED_CORN, ModFoods.GRILLED_CORN_CONSUMABLE)));
     public static final DeferredItem<Item> CREME_BRULEE = ITEMS.registerItem("creme_brulee",
             properties -> new Item(properties.food(ModFoods.CREME_BRULEE, ModFoods.CREME_BRULEE_CONSUMABLE).stacksTo(8).usingConvertsTo(ModItems.RAMEKIN.get())));
     public static final DeferredItem<Item> BOWL_OF_RATATOUILLE = ITEMS.registerItem("bowl_of_ratatouille",

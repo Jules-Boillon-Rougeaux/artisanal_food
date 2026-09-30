@@ -24,7 +24,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CORN_SEEDS);
                         output.accept(ModItems.CORN);
-                        output.accept(ModItems.COOKED_CORN);
+                        output.accept(ModItems.GRILLED_CORN);
                         output.accept(ModItems.BELL_PEPPER_SEEDS);
                         output.accept(ModItems.RED_BELL_PEPPER);
                         output.accept(ModItems.EGGPLANT_SEEDS);
@@ -58,6 +58,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.POLISHED_SALT_BLOCK);
                         output.accept(ModBlocks.SALT_BRICKS);
                         output.accept(ModBlocks.CHISELED_SALT_BRICKS);
+                        output.accept(ModBlocks.SPARKLING_GLASS);
+                        output.accept(ModBlocks.SPARKLING_COBBLESTONE);
                     }).build());
 
     public static void register(IEventBus eventBus) {

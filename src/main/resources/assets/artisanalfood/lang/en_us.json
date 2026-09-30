@@ -2,37 +2,32 @@
   "item.artisanalfood.red_bell_pepper": "Red Bell Pepper",
   "item.artisanalfood.zucchini": "Zucchini",
   "item.artisanalfood.corn": "Corn",
-  "item.artisanalfood.cooked_corn": "Cooked Corn",
+  "item.artisanalfood.grilled_corn": "Grilled Corn",
   "item.artisanalfood.eggplant": "Eggplant",
-
   "item.artisanalfood.ramekin": "Ramekin",
   "item.artisanalfood.wheat_flour": "Wheat flour",
   "item.artisanalfood.cornstarch": "Cornstarch",
   "item.artisanalfood.salt": "Salt",
   "item.artisanalfood.sparkling_powder": "Sparkling Powder",
-
   "item.artisanalfood.creme_brulee": "Crême brulée",
   "item.artisanalfood.bowl_of_ratatouille": "Bowl of Ratatouille",
   "item.artisanalfood.vegetable_soup": "Vegetable Soup",
-
   "item.artisanalfood.mini_charcoal": "Mini Charcoal",
   "item.artisanalfood.mini_coal": "Mini Coal",
-
   "item.artisanalfood.corn_seeds": "Corn Seeds",
   "item.artisanalfood.eggplant_seeds": "Eggplant Seeds",
   "item.artisanalfood.bell_pepper_seeds": "Bell Pepper Seeds",
   "item.artisanalfood.zucchini_seeds": "Zucchini Seeds",
-
+  "block.artisanalfood.charcoal_block": "Block of Charcoal",
   "block.artisanalfood.salt_ore": "Salt Ore",
   "block.artisanalfood.deepslate_salt_ore": "Deepslate Salt Ore",
-
-  "block.artisanalfood.charcoal_block": "Block of Charcoal",
   "block.artisanalfood.salt_block": "Block of Salt",
   "block.artisanalfood.polished_salt_block": "Polished Block of Salt",
   "block.artisanalfood.salt_bricks": "Salt Bricks",
   "block.artisanalfood.chiseled_salt_bricks": "Chiseled Salt Bricks",
-
-"creativetab.artisanalfood.af_blocks": "AF Blocks",
+  "block.artisanalfood.sparkling_glass": "Sparkling Glass",
+  "block.artisanalfood.sparkling_cobblestone": "Sparkling Cobblestone",
+  "creativetab.artisanalfood.af_blocks": "AF Blocks",
   "creativetab.artisanalfood.af_items": "AF Items",
   "tooltip.artisanalfood.cornseeds.tooltip": "Have you tried cooking it?"
 }
