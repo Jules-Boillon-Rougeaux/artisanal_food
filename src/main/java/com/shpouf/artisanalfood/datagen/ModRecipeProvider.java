@@ -50,12 +50,13 @@ public class ModRecipeProvider extends RecipeProvider {
         addSimpleShapelessRecipe(ModItems.ZUCCHINI_SEEDS.get(), List.of(ModItems.ZUCCHINI.get()), 1, List.of(1), "");
         addSimpleShapelessRecipe(ModItems.SPARKLING_POWDER.get(), List.of(Items.GLOWSTONE_DUST, Items.AMETHYST_SHARD), 1, List.of(2, 1), "");
         addSimpleShapelessRecipe(ModItems.CREME_BRULEE.get(), List.of(ModItems.RAMEKIN.get(),Items.EGG, Items.SUGAR, Items.MILK_BUCKET), 1, List.of(1, 1, 1, 1), "");
+        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(),  Items.BOWL), 1, List.of(1, 1, 1, 1), "");
 
-        addSimpleShapedRecipe("3x3", ModBlocks.SALT_BLOCK.get(), ModItems.SALT.get(), 1, "");
-        addSimpleShapedRecipe("3x3", ModBlocks.CHARCOAL_BLOCK.get(), Items.CHARCOAL, 1, "");
-        addSimpleShapedRecipe("2x2", ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BLOCK.get(), 1, "");
-        addSimpleShapedRecipe("2x2", ModBlocks.SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1, "");
-        addSimpleShapedRecipe("2x2", ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BRICKS.get(), 1, "");
+        addSimpleShapedRecipe("3x3", ModBlocks.SALT_BLOCK.get(), ModItems.SALT.get(), 1);
+        addSimpleShapedRecipe("3x3", ModBlocks.CHARCOAL_BLOCK.get(), Items.CHARCOAL, 1);
+        addSimpleShapedRecipe("2x2", ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BLOCK.get(), 1);
+        addSimpleShapedRecipe("2x2", ModBlocks.SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1);
+        addSimpleShapedRecipe("2x2", ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BRICKS.get(), 1);
 
         addStonecutterRecipe(ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BLOCK.get(), 1);
         addStonecutterRecipe(ModBlocks.SALT_BRICKS.get(), ModBlocks.SALT_BLOCK.get(), 1);
@@ -69,8 +70,20 @@ public class ModRecipeProvider extends RecipeProvider {
         oreSmelting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 200, "salt");
         oreBlasting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 100, "salt");
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 200);
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 200);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 200)
+                .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
+                .save(this.output, "artisanalfood:corn_smelting");
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 100)
+                .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
+                .save(this.output, "artisanalfood:corn_smoking");
+
+        shaped(RecipeCategory.FOOD, ModItems.RAMEKIN, 4)
+                .pattern("A A")
+                .pattern(" A ")
+                .define('A', Items.TERRACOTTA)
+                .unlockedBy(getHasName(Items.TERRACOTTA), has(Items.TERRACOTTA))
+                .group(getItemName(ModItems.RAMEKIN))
+                .save(output, "artisanalfood:ramekin_from_terracotta_shaped");
     }
 
     private void addStonecutterRecipe(ItemLike result, ItemLike base, int resultCount) {
@@ -80,7 +93,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
     }
 
-    private void addSimpleShapedRecipe(String recipeShape, ItemLike result, ItemLike base, int resultCount, String group) {
+    private void addSimpleShapedRecipe(String recipeShape, ItemLike result, ItemLike base, int resultCount) {
         if (Objects.equals(recipeShape, "3x3")) {
             shaped(RecipeCategory.BUILDING_BLOCKS, result, resultCount)
                     .pattern("AAA")
@@ -98,11 +111,13 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(base), has(base))
                     .group(getItemName(result))
                     .save(output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base) + "_shaped");
-
         }
     }
 
     private void addSimpleShapelessRecipe(ItemLike result, List<ItemLike> base, int resultCount, List<Integer> baseCount, String group) {
+        if (Objects.equals(group, "")) {
+            group = getItemName(result);
+        }
         if (base.size() != baseCount.size()) {
             throw new IllegalArgumentException(
                     String.format("Lists must have the same size. List 1 size: %d, List 2 size: %d",
@@ -114,7 +129,7 @@ public class ModRecipeProvider extends RecipeProvider {
             builder.requires(base.get(i), baseCount.get(i));
         }
         builder.unlockedBy(getHasName(base.getFirst()), has(base.getFirst()))
-                .group(getItemName(result))
+                .group(group)
                 .save(output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base.getFirst()) + "_shapeless");
     }
 

@@ -33,5 +33,6 @@
   "block.artisanalfood.chiseled_salt_bricks": "Chiseled Salt Bricks",
 
 "creativetab.artisanalfood.af_blocks": "AF Blocks",
-  "creativetab.artisanalfood.af_items": "AF Items"
+  "creativetab.artisanalfood.af_items": "AF Items",
+  "tooltip.artisanalfood.cornseeds.tooltip": "Have you tried cooking it?"
 }

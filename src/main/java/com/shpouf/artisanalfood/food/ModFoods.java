@@ -8,7 +8,9 @@ import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 public class ModFoods {
-//    TODO : Mettre les bonnes valeurs pour la bouffe
+    public static final FoodProperties CORN_SEEDS = new FoodProperties.Builder().nutrition(1).saturationModifier(0.5f).build();
+    public static final Consumable CORN_SEEDS_CONSUMABLE = Consumables.defaultFood().consumeSeconds(0.8F).build();
+
     public static final FoodProperties CORN = new FoodProperties.Builder().nutrition(2).saturationModifier(0.7f).build();
     public static final Consumable CORN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
 
