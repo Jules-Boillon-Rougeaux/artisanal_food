@@ -2,6 +2,7 @@ package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.item.ModItems;
+import com.shpouf.artisanalfood.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -51,6 +52,16 @@ public class ModRecipeProvider extends RecipeProvider {
         addSimpleShapelessRecipe(ModItems.SPARKLING_POWDER.get(), List.of(Items.GLOWSTONE_DUST, Items.AMETHYST_SHARD), 1, List.of(2, 1), "");
         addSimpleShapelessRecipe(ModItems.CREME_BRULEE.get(), List.of(ModItems.RAMEKIN.get(),Items.EGG, Items.SUGAR, Items.MILK_BUCKET), 1, List.of(1, 1, 1, 1), "");
         addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(),  Items.BOWL), 1, List.of(1, 1, 1, 1), "");
+
+        shapeless(RecipeCategory.MISC, ModItems.VEGETABLE_SOUP, 1)
+                .requires(ModTags.Items.VEGETABLES)
+                .requires(ModTags.Items.VEGETABLES)
+                .requires(ModTags.Items.VEGETABLES)
+                .requires(ModTags.Items.VEGETABLES)
+                .requires(Items.BOWL)
+                .unlockedBy("has_bowl", has(Items.BOWL))
+                .group("vegetable_soup")
+                .save(output, "artisanalfood:vegetable_soup_from_vegetables_shapeless");
 
         addSimpleShapedRecipe("3x3", ModBlocks.SALT_BLOCK.get(), ModItems.SALT.get(), 1);
         addSimpleShapedRecipe("3x3", ModBlocks.CHARCOAL_BLOCK.get(), Items.CHARCOAL, 1);
@@ -105,14 +116,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ModItems.SPARKLING_POWDER), has(ModItems.SPARKLING_POWDER))
                 .group(getItemName(ModBlocks.SPARKLING_COBBLESTONE))
                 .save(output, "artisanalfood:sparkling_cobblestone_from_cobblestone_and_sparkling_powder");
-
     }
 
     private void addStonecutterRecipe(ItemLike result, ItemLike base, int resultCount) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.BUILDING_BLOCKS, result, resultCount)
                 .unlockedBy(getHasName(base), this.has(base))
                 .save(this.output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base) + "_stonecutting");
-
     }
 
     private void addSimpleShapedRecipe(String recipeShape, ItemLike result, ItemLike base, int resultCount) {

@@ -32,6 +32,5 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_SALT_BLOCK.get())
                 .add(ModBlocks.SALT_BRICKS.get())
                 .add(ModBlocks.CHISELED_SALT_BRICKS.get());
-
     }
 }

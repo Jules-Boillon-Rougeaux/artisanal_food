@@ -5,6 +5,7 @@ import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DataMapProvider;
+import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 
@@ -21,5 +22,14 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.MINI_COAL.getId(), new FurnaceFuel(200), false)
                 .add(ModItems.MINI_CHARCOAL.getId(), new FurnaceFuel(200), false)
                 .add(ModBlocks.CHARCOAL_BLOCK.getId(), new FurnaceFuel(200*80), false);
+        builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModItems.CORN_SEEDS.getId(), new Compostable(0.3f), false)
+                .add(ModItems.CORN.getId(), new Compostable(0.3f), false)
+                .add(ModItems.BELL_PEPPER_SEEDS.getId(), new Compostable(0.3f), false)
+                .add(ModItems.RED_BELL_PEPPER.getId(), new Compostable(0.3f), false)
+                .add(ModItems.EGGPLANT_SEEDS.getId(), new Compostable(0.3f), false)
+                .add(ModItems.EGGPLANT.getId(), new Compostable(0.3f), false)
+                .add(ModItems.ZUCCHINI_SEEDS.getId(), new Compostable(0.3f), false)
+                .add(ModItems.ZUCCHINI.getId(), new Compostable(0.3f), false);
     }
 }
