@@ -1,25 +1,84 @@
+> **This mod is currently in Alpha.**
+> The available content is still limited, and more features are planned for future updates.
+# Artisanal Food
+###### NeoForge - Minecraft 26.1.2
+###### Dependencies - None
+###### AI-Free Project - Human-made code & assets only
 
-Installation information
-=======
+## About
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+**Artisanal Food** is a light Vanilla+ **food/farming mod**.
+The goal is to enrich Minecraft without changing its gameplay. You'll be able to discover new cultures, prepare simple meals, and use new decorative and useful items/blocks in your world.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## 🌾Crops
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Currently, you can find 4 new vegetables:
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+* Corn
+* Bell Pepper
+* Eggplant
+* Zucchini
+
+>**Seed drops are currently not implemented yet.**
+It will be similar to wheat seeds, being obtainable from tall grass.
+
+## 🍳Food & cooking
+
+### Dishes
+* Crème Brûlée
+* Ratatouille
+* Vegetable Soup
+
+### Related items
+* Ramekin
+
+
+## 🧂Salt  
+
+Salt is being introduced as a new resource.
+
+* Salt Ore
+* Deepslate Salt Ore
+* Salt
+* Block of Salt
+* Polished Block of Salt
+* Salt Bricks
+* Chiseled Salt Bricks
+
+Salt block variants are intended for **building and decoration**.
+
+>  **Salt Ore generation is currently not implemented yet.**
+Will generate naturally underground, like other vanilla ores.
+
+
+## Other
+
+Artisanal Food also adds a few small additions that fit naturally into vanilla Minecraft:
+
+* **Block of Charcoal** - Equivalence of Block of Coal (burns 80 items).
+* **Mini Charcoal** - Small charcoal piece (burns 1 item).
+* **Mini Coal** - Small coal piece (burns 1 item).
+
+
+## 🤔Planned Features
+
+**Artisanal Food** is currently under development, more content is coming very soon.
+
+* More vegetables
+* Adding fruits
+* More plants and crops
+* Jams and juices
+* More salty content
+* ...
+
+
+## Suggestions & Feedback
+
+Suggestions are welcome!  
+If you have any good idea that would fit, go to the **CurseForge comments section**?  
+
+> **Found a bug?** Please report it on the **project's GitHub repository**.
+
+
+###### MIT License – [see LICENSE](./LICENSE)
