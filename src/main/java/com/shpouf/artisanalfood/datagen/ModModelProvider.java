@@ -20,6 +20,7 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.RED_BELL_PEPPER.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ZUCCHINI.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.CORN.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.COOKED_CORN.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.EGGPLANT.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ModItems.CORNSTARCH.get(), ModelTemplates.FLAT_ITEM);

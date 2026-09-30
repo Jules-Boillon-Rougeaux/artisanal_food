@@ -68,6 +68,9 @@ public class ModRecipeProvider extends RecipeProvider {
 
         oreSmelting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 200, "salt");
         oreBlasting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 100, "salt");
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 200);
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.COOKED_CORN, 0.25f, 200);
     }
 
     private void addStonecutterRecipe(ItemLike result, ItemLike base, int resultCount) {

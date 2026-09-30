@@ -23,13 +23,13 @@ public class ModCreativeModeTabs {
                     .withTabsAfter(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "af_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CORN_SEEDS);
-                        output.accept(ModItems.BELL_PEPPER_SEEDS);
-                        output.accept(ModItems.EGGPLANT_SEEDS);
-                        output.accept(ModItems.ZUCCHINI_SEEDS);
-
                         output.accept(ModItems.CORN);
+                        output.accept(ModItems.COOKED_CORN);
+                        output.accept(ModItems.BELL_PEPPER_SEEDS);
                         output.accept(ModItems.RED_BELL_PEPPER);
+                        output.accept(ModItems.EGGPLANT_SEEDS);
                         output.accept(ModItems.EGGPLANT);
+                        output.accept(ModItems.ZUCCHINI_SEEDS);
                         output.accept(ModItems.ZUCCHINI);
 
                         output.accept(ModItems.WHEAT_FLOUR);
