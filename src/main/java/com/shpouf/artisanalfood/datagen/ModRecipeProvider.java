@@ -121,16 +121,19 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ModBlocks.SALT_BLOCK.get()), has(ModBlocks.SALT_BLOCK))
                 .group("salt_stairs").save(output, "artisanalfood:salt_stairs_from_salt_block");
         slab(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_SLAB.get(), ModBlocks.SALT_BLOCK.get());
+        wall(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_WALL.get(), ModBlocks.SALT_BLOCK.get());
 
         stairBuilder(ModBlocks.POLISHED_SALT_STAIRS.get(), Ingredient.of(ModBlocks.POLISHED_SALT_BLOCK))
                 .unlockedBy(getHasName(ModBlocks.POLISHED_SALT_BLOCK.get()), has(ModBlocks.POLISHED_SALT_BLOCK))
                 .group("salt_stairs").save(output, "artisanalfood:polished_salt_stairs_from_polished_salt_block");
         slab(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_SALT_SLAB.get(), ModBlocks.POLISHED_SALT_BLOCK.get());
+        wall(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_SALT_WALL.get(), ModBlocks.POLISHED_SALT_BLOCK.get());
 
         stairBuilder(ModBlocks.SALT_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.SALT_BRICKS))
                 .unlockedBy(getHasName(ModBlocks.SALT_BRICKS.get()), has(ModBlocks.SALT_BRICKS))
                 .group("salt_stairs").save(output, "artisanalfood:salt_bricks_stairs_from_salt_bricks");
         slab(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_BRICKS_SLAB.get(), ModBlocks.SALT_BRICKS.get());
+        wall(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_BRICKS_WALL.get(), ModBlocks.SALT_BRICKS.get());
     }
 
     private void addStonecutterRecipe(ItemLike result, ItemLike base, int resultCount) {

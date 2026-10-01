@@ -51,14 +51,17 @@ public class ModModelProvider extends ModelProvider {
 
         blockModels.family(ModBlocks.SALT_BLOCK.get())
                 .stairs(ModBlocks.SALT_STAIRS.get())
-                .slab(ModBlocks.SALT_SLAB.get());
+                .slab(ModBlocks.SALT_SLAB.get())
+                .wall(ModBlocks.SALT_WALL.get());
 
         blockModels.family(ModBlocks.POLISHED_SALT_BLOCK.get())
                 .stairs(ModBlocks.POLISHED_SALT_STAIRS.get())
-                .slab(ModBlocks.POLISHED_SALT_SLAB.get());
+                .slab(ModBlocks.POLISHED_SALT_SLAB.get())
+                .wall(ModBlocks.POLISHED_SALT_WALL.get());
 
         blockModels.family(ModBlocks.SALT_BRICKS.get())
                 .stairs(ModBlocks.SALT_BRICKS_STAIRS.get())
-                .slab(ModBlocks.SALT_BRICKS_SLAB.get());
+                .slab(ModBlocks.SALT_BRICKS_SLAB.get())
+                .wall(ModBlocks.SALT_BRICKS_WALL.get());
     }
 }
