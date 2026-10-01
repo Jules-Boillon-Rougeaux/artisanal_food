@@ -45,11 +45,20 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ModBlocks.SALT_ORE.get());
         blockModels.createTrivialCube(ModBlocks.DEEPSLATE_SALT_ORE.get());
         blockModels.createTrivialCube(ModBlocks.CHARCOAL_BLOCK.get());
-        blockModels.createTrivialCube(ModBlocks.SALT_BLOCK.get());
-        blockModels.createTrivialCube(ModBlocks.POLISHED_SALT_BLOCK.get());
-        blockModels.createTrivialCube(ModBlocks.SALT_BRICKS.get());
         blockModels.createTrivialCube(ModBlocks.CHISELED_SALT_BRICKS.get());
         blockModels.createTrivialCube(ModBlocks.SPARKLING_GLASS.get());
         blockModels.createTrivialCube(ModBlocks.SPARKLING_COBBLESTONE.get());
+
+        blockModels.family(ModBlocks.SALT_BLOCK.get())
+                .stairs(ModBlocks.SALT_STAIRS.get())
+                .slab(ModBlocks.SALT_SLAB.get());
+
+        blockModels.family(ModBlocks.POLISHED_SALT_BLOCK.get())
+                .stairs(ModBlocks.POLISHED_SALT_STAIRS.get())
+                .slab(ModBlocks.POLISHED_SALT_SLAB.get());
+
+        blockModels.family(ModBlocks.SALT_BRICKS.get())
+                .stairs(ModBlocks.SALT_BRICKS_STAIRS.get())
+                .slab(ModBlocks.SALT_BRICKS_SLAB.get());
     }
 }

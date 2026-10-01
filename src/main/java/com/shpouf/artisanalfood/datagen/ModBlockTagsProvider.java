@@ -23,7 +23,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SALT_BLOCK.get())
                 .add(ModBlocks.POLISHED_SALT_BLOCK.get())
                 .add(ModBlocks.SALT_BRICKS.get())
-                .add(ModBlocks.CHISELED_SALT_BRICKS.get());
+                .add(ModBlocks.CHISELED_SALT_BRICKS.get())
+                .add(ModBlocks.SPARKLING_COBBLESTONE.get())
+                .add(ModBlocks.SALT_STAIRS.get())
+                .add(ModBlocks.SALT_SLAB.get())
+                .add(ModBlocks.POLISHED_SALT_STAIRS.get())
+                .add(ModBlocks.POLISHED_SALT_SLAB.get())
+                .add(ModBlocks.SALT_BRICKS_STAIRS.get())
+                .add(ModBlocks.SALT_BRICKS_SLAB.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.SALT_ORE.get())

@@ -27,6 +27,13 @@
   "block.artisanalfood.chiseled_salt_bricks": "Briques de sel sculptées",
   "block.artisanalfood.sparkling_glass": "Verre scintillant",
   "block.artisanalfood.sparkling_cobblestone": "Pierre scintillante",
+  "block.artisanalfood.salt_stairs": "Escalier en sel",
+  "block.artisanalfood.salt_slab": "Dalle de sel",
+  "block.artisanalfood.polished_salt_stairs": "Escalier en sel polie",
+  "block.artisanalfood.polished_salt_slab": "Dalle de sel polie",
+  "block.artisanalfood.salt_bricks_stairs": "Escalier en briques de sel",
+  "block.artisanalfood.salt_bricks_slab": "Dalle de briques de sel",
+
   "creativetab.artisanalfood.af_blocks": "AF Blocs",
   "creativetab.artisanalfood.af_items": "AF Objets",
   "tooltip.artisanalfood.cornseeds.tooltip": "Avez-vous essayé de le cuisiner ?"

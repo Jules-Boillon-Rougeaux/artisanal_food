@@ -4,6 +4,8 @@ import com.shpouf.artisanalfood.ArtisanalFood;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -15,6 +17,7 @@ import java.util.function.Function;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ArtisanalFood.MOD_ID);
+
     public static final DeferredBlock<Block> SALT_ORE = registerBlock("salt_ore",
             properties -> new Block(properties.strength(3f)
                     .requiresCorrectToolForDrops()));
@@ -39,7 +42,24 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SPARKLING_GLASS = registerBlock("sparkling_glass",
             properties -> new TransparentBlock(properties.strength(0.5f).lightLevel(state -> 15).noOcclusion()));
     public static final DeferredBlock<Block> SPARKLING_COBBLESTONE = registerBlock("sparkling_cobblestone",
-            properties -> new Block(properties.strength(2f).lightLevel(state -> 15)));
+            properties -> new Block(properties.strength(2f).lightLevel(state -> 15).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> SALT_STAIRS = registerBlock("salt_stairs",
+            properties -> new StairBlock(ModBlocks.SALT_BLOCK.get().defaultBlockState(),
+                    properties.strength(3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> SALT_SLAB = registerBlock("salt_slab",
+            properties -> new SlabBlock(properties.strength(3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_SALT_STAIRS = registerBlock("polished_salt_stairs",
+            properties -> new StairBlock(ModBlocks.POLISHED_SALT_BLOCK.get().defaultBlockState(),
+                    properties.strength(3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_SALT_SLAB = registerBlock("polished_salt_slab",
+            properties -> new SlabBlock(properties.strength(3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> SALT_BRICKS_STAIRS = registerBlock("salt_bricks_stairs",
+            properties -> new StairBlock(ModBlocks.SALT_BRICKS.get().defaultBlockState(),
+                    properties.strength(3f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> SALT_BRICKS_SLAB = registerBlock("salt_bricks_slab",
+            properties -> new SlabBlock(properties.strength(3f).requiresCorrectToolForDrops()));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
