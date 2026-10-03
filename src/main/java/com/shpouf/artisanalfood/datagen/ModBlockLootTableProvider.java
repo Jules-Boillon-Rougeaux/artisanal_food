@@ -1,7 +1,9 @@
 package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.block.ModBlocks;
+import com.shpouf.artisanalfood.block.custom.BellPepperCropBlock;
 import com.shpouf.artisanalfood.item.ModItems;
+import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -15,6 +17,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
@@ -44,22 +47,24 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.SALT_BRICKS_SLAB.get(), this::createSlabItemTable);
         dropSelf(ModBlocks.SALT_BRICKS_WALL.get());
 
-        add(ModBlocks.SPARKLING_GLASS.get(), 
-            createSilkTouchOnlyTable(ModBlocks.SPARKLING_GLASS.get())
+        add(ModBlocks.SPARKLING_GLASS.get(),
+                createSilkTouchOnlyTable(ModBlocks.SPARKLING_GLASS.get())
         );
-        
+
         add(ModBlocks.SALT_ORE.get(),
                 createMultipleOreDrops(ModBlocks.SALT_ORE.get(), ModItems.SALT.get(), 2F, 4F));
         add(ModBlocks.DEEPSLATE_SALT_ORE.get(),
                 createMultipleOreDrops(ModBlocks.DEEPSLATE_SALT_ORE.get(), ModItems.SALT.get(), 2F, 4F));
+
+        add(ModBlocks.BELL_PEPPER_CROP.get(), createCropDrops(ModBlocks.BELL_PEPPER_CROP.get(), ModItems.RED_BELL_PEPPER.get(), ModItems.BELL_PEPPER_SEEDS.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.BELL_PEPPER_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BellPepperCropBlock.AGE, 4))));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> enchantments = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(block, this.applyExplosionDecay(block,
-                        LootItem.lootTableItem(item)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
-                                .apply(ApplyBonusCount.addOreBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE)))));
+                LootItem.lootTableItem(item)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
+                        .apply(ApplyBonusCount.addOreBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE)))));
     }
 
     @Override

@@ -2,12 +2,15 @@ package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
 import com.shpouf.artisanalfood.block.ModBlocks;
+import com.shpouf.artisanalfood.block.custom.BellPepperCropBlock;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.Property;
 
 public class ModModelProvider extends ModelProvider {
     public ModModelProvider(PackOutput output) {
@@ -38,7 +41,7 @@ public class ModModelProvider extends ModelProvider {
 
         itemModels.generateFlatItem(ModItems.CORN_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.EGGPLANT_SEEDS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.BELL_PEPPER_SEEDS.get(), ModelTemplates.FLAT_ITEM);
+//        itemModels.generateFlatItem(ModItems.BELL_PEPPER_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ZUCCHINI_SEEDS.get(), ModelTemplates.FLAT_ITEM);
 
         /* BLOCKS */
@@ -63,5 +66,7 @@ public class ModModelProvider extends ModelProvider {
                 .stairs(ModBlocks.SALT_BRICKS_STAIRS.get())
                 .slab(ModBlocks.SALT_BRICKS_SLAB.get())
                 .wall(ModBlocks.SALT_BRICKS_WALL.get());
+
+        blockModels.createCropBlock(ModBlocks.BELL_PEPPER_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
     }
 }

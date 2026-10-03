@@ -1,10 +1,12 @@
 package com.shpouf.artisanalfood.block;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
+import com.shpouf.artisanalfood.block.custom.BellPepperCropBlock;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -66,6 +68,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SALT_BRICKS_WALL = registerBlock("salt_bricks_wall",
             properties -> new WallBlock(properties.strength(3f).requiresCorrectToolForDrops()));
 
+
+    public static final DeferredBlock<Block> BELL_PEPPER_CROP = BLOCKS.registerBlock("bell_pepper_crop",
+            properties -> new BellPepperCropBlock(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

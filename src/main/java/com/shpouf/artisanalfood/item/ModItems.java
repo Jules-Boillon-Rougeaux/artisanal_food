@@ -1,12 +1,10 @@
 package com.shpouf.artisanalfood.item;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
+import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.food.ModFoods;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -58,8 +56,10 @@ public class ModItems {
     public static final DeferredItem<Item> MINI_CHARCOAL = ITEMS.registerSimpleItem("mini_charcoal");
     public static final DeferredItem<Item> MINI_COAL = ITEMS.registerSimpleItem("mini_coal");
     public static final DeferredItem<Item> EGGPLANT_SEEDS = ITEMS.registerSimpleItem("eggplant_seeds");
-    public static final DeferredItem<Item> BELL_PEPPER_SEEDS = ITEMS.registerSimpleItem("bell_pepper_seeds");
     public static final DeferredItem<Item> ZUCCHINI_SEEDS = ITEMS.registerSimpleItem("zucchini_seeds");
+
+    public static final DeferredItem<Item> BELL_PEPPER_SEEDS = ITEMS.registerItem("bell_pepper_seeds",
+            properties -> new BlockItem(ModBlocks.BELL_PEPPER_CROP.get(), properties));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
