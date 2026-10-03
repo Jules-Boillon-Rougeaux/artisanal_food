@@ -67,6 +67,11 @@ public class ModModelProvider extends ModelProvider {
                 .slab(ModBlocks.SALT_BRICKS_SLAB.get())
                 .wall(ModBlocks.SALT_BRICKS_WALL.get());
 
-        blockModels.createCropBlock(ModBlocks.BELL_PEPPER_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
+        createCropCrossBlock(blockModels, ModBlocks.BELL_PEPPER_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
+    }
+
+    private static void createCropCrossBlock(
+            BlockModelGenerators blockModels, Block block, Property<Integer> property, int... stages) {
+        blockModels.createCrossBlock(block, BlockModelGenerators.PlantType.NOT_TINTED, property, stages);
     }
 }
