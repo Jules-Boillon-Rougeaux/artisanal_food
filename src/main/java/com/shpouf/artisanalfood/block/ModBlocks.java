@@ -72,6 +72,15 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BELL_PEPPER_CROP = BLOCKS.registerBlock("bell_pepper_crop",
             properties -> new BellPepperCropBlock(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> CORN_CROP = BLOCKS.registerBlock("corn_crop",
+            properties -> new BellPepperCropBlock(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> EGGPLANT_CROP = BLOCKS.registerBlock("eggplant_crop",
+            properties -> new BellPepperCropBlock(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> ZUCCHINI_CROP = BLOCKS.registerBlock("zucchini_crop",
+            properties -> new BellPepperCropBlock(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

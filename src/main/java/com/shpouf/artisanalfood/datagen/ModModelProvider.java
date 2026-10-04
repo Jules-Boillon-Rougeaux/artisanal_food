@@ -39,11 +39,6 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.MINI_CHARCOAL.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.MINI_COAL.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ModItems.CORN_SEEDS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.EGGPLANT_SEEDS.get(), ModelTemplates.FLAT_ITEM);
-//        itemModels.generateFlatItem(ModItems.BELL_PEPPER_SEEDS.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.ZUCCHINI_SEEDS.get(), ModelTemplates.FLAT_ITEM);
-
         /* BLOCKS */
         blockModels.createTrivialCube(ModBlocks.SALT_ORE.get());
         blockModels.createTrivialCube(ModBlocks.DEEPSLATE_SALT_ORE.get());
@@ -68,6 +63,9 @@ public class ModModelProvider extends ModelProvider {
                 .wall(ModBlocks.SALT_BRICKS_WALL.get());
 
         createCropCrossBlock(blockModels, ModBlocks.BELL_PEPPER_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
+        createCropCrossBlock(blockModels, ModBlocks.CORN_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
+        createCropCrossBlock(blockModels, ModBlocks.EGGPLANT_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
+        createCropCrossBlock(blockModels, ModBlocks.ZUCCHINI_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
     }
 
     private static void createCropCrossBlock(

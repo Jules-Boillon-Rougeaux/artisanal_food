@@ -57,6 +57,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 createMultipleOreDrops(ModBlocks.DEEPSLATE_SALT_ORE.get(), ModItems.SALT.get(), 2F, 4F));
 
         add(ModBlocks.BELL_PEPPER_CROP.get(), createCropDrops(ModBlocks.BELL_PEPPER_CROP.get(), ModItems.RED_BELL_PEPPER.get(), ModItems.BELL_PEPPER_SEEDS.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.BELL_PEPPER_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BellPepperCropBlock.AGE, 4))));
+        add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(), ModItems.CORN_SEEDS.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CORN_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BellPepperCropBlock.AGE, 4))));
+        add(ModBlocks.EGGPLANT_CROP.get(), createCropDrops(ModBlocks.EGGPLANT_CROP.get(), ModItems.EGGPLANT.get(), ModItems.EGGPLANT_SEEDS.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.EGGPLANT_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BellPepperCropBlock.AGE, 4))));
+        add(ModBlocks.ZUCCHINI_CROP.get(), createCropDrops(ModBlocks.ZUCCHINI_CROP.get(), ModItems.ZUCCHINI.get(), ModItems.ZUCCHINI_SEEDS.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.ZUCCHINI_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BellPepperCropBlock.AGE, 4))));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float minDrops, float maxDrops) {

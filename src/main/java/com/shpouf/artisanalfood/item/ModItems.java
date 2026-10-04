@@ -44,7 +44,7 @@ public class ModItems {
             properties -> new Item(properties.food(ModFoods.VEGETABLE_SOUP, ModFoods.VEGETABLE_SOUP_CONSUMABLE).stacksTo(8).usingConvertsTo(Items.BOWL)));
 
     public static final DeferredItem<Item> CORN_SEEDS = ITEMS.registerItem("corn_seeds",
-            properties -> new Item(properties.food(ModFoods.CORN_SEEDS, ModFoods.CORN_SEEDS_CONSUMABLE)){
+            properties -> new BlockItem(ModBlocks.CORN_CROP.get(), properties.food(ModFoods.CORN_SEEDS, ModFoods.CORN_SEEDS_CONSUMABLE)) {
                 @Override
                 public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
                     builder.accept(Component.translatable("tooltip.artisanalfood.cornseeds.tooltip"));
@@ -52,14 +52,15 @@ public class ModItems {
                 }
             });
 
-
     public static final DeferredItem<Item> MINI_CHARCOAL = ITEMS.registerSimpleItem("mini_charcoal");
     public static final DeferredItem<Item> MINI_COAL = ITEMS.registerSimpleItem("mini_coal");
-    public static final DeferredItem<Item> EGGPLANT_SEEDS = ITEMS.registerSimpleItem("eggplant_seeds");
-    public static final DeferredItem<Item> ZUCCHINI_SEEDS = ITEMS.registerSimpleItem("zucchini_seeds");
 
     public static final DeferredItem<Item> BELL_PEPPER_SEEDS = ITEMS.registerItem("bell_pepper_seeds",
             properties -> new BlockItem(ModBlocks.BELL_PEPPER_CROP.get(), properties));
+    public static final DeferredItem<Item> EGGPLANT_SEEDS = ITEMS.registerItem("eggplant_seeds",
+            properties -> new BlockItem(ModBlocks.EGGPLANT_CROP.get(), properties));
+    public static final DeferredItem<Item> ZUCCHINI_SEEDS = ITEMS.registerItem("zucchini_seeds",
+            properties -> new BlockItem(ModBlocks.ZUCCHINI_CROP.get(), properties));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

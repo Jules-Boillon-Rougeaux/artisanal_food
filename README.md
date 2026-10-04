@@ -8,7 +8,7 @@
 ## About
 
 **Artisanal Food** is a light Vanilla+ **food/farming mod**.
-The goal is to enrich Minecraft without changing its gameplay. You'll be able to discover new cultures, prepare simple meals, and use new decorative and useful items/blocks in your world.
+The goal is to enrich Minecraft without changing its gameplay. You'll be able to discover new crops, prepare new meals, and use new decorative and useful items/blocks in your world.
 
 
 ## 🌾Crops
@@ -19,6 +19,9 @@ Currently, you can find 4 new vegetables:
 * Bell Pepper
 * Eggplant
 * Zucchini
+*  *Garlic* / Planned
+*  *Tomato* / Planned
+*  *Onion* / Planned
 
 >**Seed drops are currently not implemented yet.**
 It will be similar to wheat seeds, being obtainable from tall grass.
@@ -41,12 +44,13 @@ Salt is being introduced as a new resource.
 * Salt Ore
 * Deepslate Salt Ore
 * Salt
-* Block of Salt
-* Polished Block of Salt
-* Salt Bricks
+* Block of Salt*
+* Polished Block of Salt*
+* Salt Bricks*
 * Chiseled Salt Bricks
 
 Salt block variants are intended for **building and decoration**.
+> Blocks* with slab, stairs and wall.
 
 >  **Salt Ore generation is currently not implemented yet.**
 Will generate naturally underground, like other vanilla ores.
@@ -54,11 +58,14 @@ Will generate naturally underground, like other vanilla ores.
 
 ## Other
 
-Artisanal Food also adds a few small additions that fit naturally into vanilla Minecraft:
+Artisanal Food also adds a few small additions:
 
 * **Block of Charcoal** - Equivalence of Block of Coal (burns 80 items).
 * **Mini Charcoal** - Small charcoal piece (burns 1 item).
 * **Mini Coal** - Small coal piece (burns 1 item).
+* **Sparkling Glass** - Glass that emit light.
+* **Sparkling Cobblestone** - Cobblestone that emit light.
+* *Glowstone-like* / Planned
 
 
 ## 🤔Planned Features

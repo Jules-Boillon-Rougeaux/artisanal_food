@@ -67,5 +67,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SALT_WALL.get())
                 .add(ModBlocks.POLISHED_SALT_WALL.get())
                 .add(ModBlocks.SALT_BRICKS_WALL.get());
+
+        tag(BlockTags.CROPS)
+                .add(ModBlocks.BELL_PEPPER_CROP.get());
     }
 }
