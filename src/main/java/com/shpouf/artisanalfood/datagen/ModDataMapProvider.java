@@ -24,12 +24,12 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModBlocks.CHARCOAL_BLOCK.getId(), new FurnaceFuel(200*80), false);
         builder(NeoForgeDataMaps.COMPOSTABLES)
                 .add(ModItems.CORN_SEEDS.getId(), new Compostable(0.3f), false)
-                .add(ModItems.CORN.getId(), new Compostable(0.3f), false)
+                .add(ModItems.CORN.getId(), new Compostable(0.5f), false)
                 .add(ModItems.BELL_PEPPER_SEEDS.getId(), new Compostable(0.3f), false)
-                .add(ModItems.RED_BELL_PEPPER.getId(), new Compostable(0.3f), false)
+                .add(ModItems.RED_BELL_PEPPER.getId(), new Compostable(0.65f), false)
                 .add(ModItems.EGGPLANT_SEEDS.getId(), new Compostable(0.3f), false)
-                .add(ModItems.EGGPLANT.getId(), new Compostable(0.3f), false)
+                .add(ModItems.EGGPLANT.getId(), new Compostable(0.5f), false)
                 .add(ModItems.ZUCCHINI_SEEDS.getId(), new Compostable(0.3f), false)
-                .add(ModItems.ZUCCHINI.getId(), new Compostable(0.3f), false);
+                .add(ModItems.ZUCCHINI.getId(), new Compostable(0.5f), false);
     }
 }
