@@ -2,15 +2,15 @@ package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
 import com.shpouf.artisanalfood.block.ModBlocks;
-import com.shpouf.artisanalfood.block.custom.BellPepperCropBlock;
+import com.shpouf.artisanalfood.block.custom.CustomCropBlock;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.properties.Property;
+
+import java.util.stream.IntStream;
 
 public class ModModelProvider extends ModelProvider {
     public ModModelProvider(PackOutput output) {
@@ -62,14 +62,14 @@ public class ModModelProvider extends ModelProvider {
                 .slab(ModBlocks.SALT_BRICKS_SLAB.get())
                 .wall(ModBlocks.SALT_BRICKS_WALL.get());
 
-        createCropCrossBlock(blockModels, ModBlocks.BELL_PEPPER_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
-        createCropCrossBlock(blockModels, ModBlocks.CORN_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
-        createCropCrossBlock(blockModels, ModBlocks.EGGPLANT_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
-        createCropCrossBlock(blockModels, ModBlocks.ZUCCHINI_CROP.get(), BellPepperCropBlock.AGE, 0, 1, 2, 3, 4);
+        createCropCrossBlock(blockModels, ModBlocks.BELL_PEPPER_CROP.get());
+        createCropCrossBlock(blockModels, ModBlocks.CORN_CROP.get());
+        createCropCrossBlock(blockModels, ModBlocks.EGGPLANT_CROP.get());
+        createCropCrossBlock(blockModels, ModBlocks.ZUCCHINI_CROP.get());
     }
 
-    private static void createCropCrossBlock(
-            BlockModelGenerators blockModels, Block block, Property<Integer> property, int... stages) {
-        blockModels.createCrossBlock(block, BlockModelGenerators.PlantType.NOT_TINTED, property, stages);
+    private static void createCropCrossBlock(BlockModelGenerators blockModels, CustomCropBlock block) {
+        int[] stages = IntStream.rangeClosed(0, block.getMaxAge()).toArray();
+        blockModels.createCrossBlock(block, BlockModelGenerators.PlantType.NOT_TINTED, block.getAgeProperty(), stages);
     }
 }
