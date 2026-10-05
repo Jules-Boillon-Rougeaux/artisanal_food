@@ -2,7 +2,6 @@ package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.item.ModItems;
-import com.shpouf.artisanalfood.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -11,6 +10,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.List;
 import java.util.Objects;
@@ -54,10 +54,11 @@ public class ModRecipeProvider extends RecipeProvider {
         addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(),  Items.BOWL), 1, List.of(1, 1, 1, 1), "");
 
         shapeless(RecipeCategory.MISC, ModItems.VEGETABLE_SOUP, 1)
-                .requires(ModTags.Items.VEGETABLES)
-                .requires(ModTags.Items.VEGETABLES)
-                .requires(ModTags.Items.VEGETABLES)
-                .requires(ModTags.Items.VEGETABLES)
+                .requires(Tags.Items.FOODS_VEGETABLE)
+                .requires(Tags.Items.FOODS_VEGETABLE)
+                .requires(Tags.Items.FOODS_VEGETABLE)
+                .requires(Items.POTATO)
+//                .requires(Items.ONION)
                 .requires(Items.BOWL)
                 .unlockedBy("has_bowl", has(Items.BOWL))
                 .group("vegetable_soup")

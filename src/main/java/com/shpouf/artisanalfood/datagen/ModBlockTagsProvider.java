@@ -69,6 +69,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SALT_BRICKS_WALL.get());
 
         tag(BlockTags.CROPS)
-                .add(ModBlocks.BELL_PEPPER_CROP.get());
+                .add(ModBlocks.BELL_PEPPER_CROP.get())
+                .add(ModBlocks.ZUCCHINI_CROP.get())
+                .add(ModBlocks.CORN_CROP.get())
+                .add(ModBlocks.EGGPLANT_CROP.get());
+
+        tag(BlockTags.MAINTAINS_FARMLAND)
+                .add(ModBlocks.BELL_PEPPER_CROP.get())
+                .add(ModBlocks.ZUCCHINI_CROP.get())
+                .add(ModBlocks.CORN_CROP.get())
+                .add(ModBlocks.EGGPLANT_CROP.get());
     }
 }
