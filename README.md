@@ -3,7 +3,7 @@
 # Artisanal Food
 ###### NeoForge - Minecraft 26.1.2
 ###### Dependencies - None
-###### AI-Free Project - Human-made code & assets only
+###### AI-Free assets - Human-made assets only (textures, sounds...)
 
 ## About
 
