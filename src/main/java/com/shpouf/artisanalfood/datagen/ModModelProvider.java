@@ -31,7 +31,6 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.RED_BELL_PEPPER.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ZUCCHINI.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.CORN.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.GRILLED_CORN.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.EGGPLANT.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ModItems.CORNSTARCH.get(), ModelTemplates.FLAT_ITEM);
@@ -40,9 +39,11 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.SALT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SPARKLING_POWDER.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(ModItems.CREME_BRULEE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.GRILLED_CORN.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.SALTED_COD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.BOWL_OF_RATATOUILLE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.VEGETABLE_SOUP.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.CREME_BRULEE.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ModItems.MINI_CHARCOAL.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.MINI_COAL.get(), ModelTemplates.FLAT_ITEM);

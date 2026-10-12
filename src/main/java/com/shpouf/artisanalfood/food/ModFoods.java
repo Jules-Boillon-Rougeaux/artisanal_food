@@ -23,6 +23,9 @@ public class ModFoods {
     public static final FoodProperties ZUCCHINI = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).build();
     public static final Consumable ZUCCHINI_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
 
+    public static final FoodProperties SALTED_COD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
+    public static final Consumable SALTED_COD_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
+    
     public static final FoodProperties BOWL_OF_RATATOUILLE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).build();
     public static final Consumable BOWL_OF_RATATOUILLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
 

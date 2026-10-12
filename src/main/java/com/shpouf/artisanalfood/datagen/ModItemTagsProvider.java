@@ -59,9 +59,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.RED_MUSHROOM);
 
         tag(Tags.Items.FOODS)
-                .add(ModItems.CREME_BRULEE.get())
                 .add(ModItems.GRILLED_CORN.get())
+                .add(ModItems.SALTED_COD.get())
                 .add(ModItems.BOWL_OF_RATATOUILLE.get())
-                .add(ModItems.VEGETABLE_SOUP.get());
+                .add(ModItems.VEGETABLE_SOUP.get())
+                .add(ModItems.CREME_BRULEE.get());
     }
 }

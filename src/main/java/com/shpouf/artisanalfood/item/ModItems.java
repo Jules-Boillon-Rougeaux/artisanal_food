@@ -36,12 +36,14 @@ public class ModItems {
 
     public static final DeferredItem<Item> GRILLED_CORN = ITEMS.registerItem("grilled_corn",
             properties -> new Item(properties.food(ModFoods.GRILLED_CORN, ModFoods.GRILLED_CORN_CONSUMABLE)));
-    public static final DeferredItem<Item> CREME_BRULEE = ITEMS.registerItem("creme_brulee",
-            properties -> new Item(properties.food(ModFoods.CREME_BRULEE, ModFoods.CREME_BRULEE_CONSUMABLE).stacksTo(8).usingConvertsTo(ModItems.RAMEKIN.get())));
+    public static final DeferredItem<Item> SALTED_COD = ITEMS.registerItem("salted_cod",
+            properties -> new Item(properties.food(ModFoods.SALTED_COD, ModFoods.SALTED_COD_CONSUMABLE)));
     public static final DeferredItem<Item> BOWL_OF_RATATOUILLE = ITEMS.registerItem("bowl_of_ratatouille",
             properties -> new Item(properties.food(ModFoods.BOWL_OF_RATATOUILLE, ModFoods.BOWL_OF_RATATOUILLE_CONSUMABLE).stacksTo(8).usingConvertsTo(Items.BOWL)));
     public static final DeferredItem<Item> VEGETABLE_SOUP = ITEMS.registerItem("vegetable_soup",
             properties -> new Item(properties.food(ModFoods.VEGETABLE_SOUP, ModFoods.VEGETABLE_SOUP_CONSUMABLE).stacksTo(8).usingConvertsTo(Items.BOWL)));
+    public static final DeferredItem<Item> CREME_BRULEE = ITEMS.registerItem("creme_brulee",
+            properties -> new Item(properties.food(ModFoods.CREME_BRULEE, ModFoods.CREME_BRULEE_CONSUMABLE).stacksTo(8).usingConvertsTo(ModItems.RAMEKIN.get())));
 
     public static final DeferredItem<Item> CORN_SEEDS = ITEMS.registerItem("corn_seeds",
             properties -> new BlockItem(ModBlocks.CORN_CROP.get(), properties.food(ModFoods.CORN_SEEDS, ModFoods.CORN_SEEDS_CONSUMABLE)) {

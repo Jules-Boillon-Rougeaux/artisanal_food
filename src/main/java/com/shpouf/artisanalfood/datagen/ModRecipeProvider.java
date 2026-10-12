@@ -65,7 +65,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('B', ModItems.SPARKLING_POWDER)
                 .unlockedBy(getHasName(ModItems.SPARKLING_POWDER), has(ModItems.SPARKLING_POWDER))
                 .group(getItemName(ModBlocks.SPARKLING_GLASS))
-                .save(output, "artisanalfood:sparkling_glass");
+                .save(output);
         shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SPARKLING_COBBLESTONE, 4)
                 .pattern(" A ")
                 .pattern("ABA")
@@ -74,19 +74,19 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('B', ModItems.SPARKLING_POWDER)
                 .unlockedBy(getHasName(ModItems.SPARKLING_POWDER.get()), has(ModItems.SPARKLING_POWDER))
                 .group(getItemName(ModBlocks.SPARKLING_COBBLESTONE))
-                .save(output, "artisanalfood:sparkling_cobblestone");
+                .save(output);
         shaped(RecipeCategory.FOOD, ModItems.RAMEKIN, 4)
                 .pattern("A A")
                 .pattern(" A ")
                 .define('A', Items.TERRACOTTA)
                 .unlockedBy(getHasName(Items.TERRACOTTA), has(Items.TERRACOTTA))
                 .group(getItemName(ModItems.RAMEKIN))
-                .save(output, "artisanalfood:ramekin");
+                .save(output);
 
 
         //  Shapeless
-        addSimpleShapelessRecipe(ModBlocks.CHARCOAL_BLOCK.get(), List.of(Items.CHARCOAL), 1, List.of(9), "coal_block", "");
-        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModBlocks.CHARCOAL_BLOCK.get()), 9, List.of(1), "coal", "");
+        addSimpleShapelessRecipe(ModBlocks.CHARCOAL_BLOCK.get(), List.of(Items.CHARCOAL), 1, List.of(9), "coal_block", "charcoal");
+        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModBlocks.CHARCOAL_BLOCK.get()), 9, List.of(1), "coal", "charcoal_block");
         addSimpleShapelessRecipe(ModBlocks.SALT_BLOCK.get(), List.of(ModItems.SALT.get()), 1, List.of(9), "", "");
         addSimpleShapelessRecipe(ModItems.SALT.get(), List.of(ModBlocks.SALT_BLOCK.get()), 9, List.of(1), "", "");
         addSimpleShapelessRecipe(ModItems.CORN_SEEDS.get(), List.of(ModItems.CORN.get()), 2, List.of(1), "seeds", "");
@@ -94,11 +94,12 @@ public class ModRecipeProvider extends RecipeProvider {
         addSimpleShapelessRecipe(ModItems.EGGPLANT_SEEDS.get(), List.of(ModItems.EGGPLANT.get()), 1, List.of(1), "seeds", "");
         addSimpleShapelessRecipe(ModItems.ZUCCHINI_SEEDS.get(), List.of(ModItems.ZUCCHINI.get()), 1, List.of(1), "seeds", "");
         addSimpleShapelessRecipe(ModItems.SPARKLING_POWDER.get(), List.of(Items.GLOWSTONE_DUST, Items.AMETHYST_SHARD), 1, List.of(2, 1), "", "");
-        addSimpleShapelessRecipe(ModItems.CREME_BRULEE.get(), List.of(ModItems.RAMEKIN.get(),Items.EGG, Items.SUGAR, Items.MILK_BUCKET), 1, List.of(1, 1, 1, 1), "", "");
+        addSimpleShapelessRecipe(ModItems.SALTED_COD.get(), List.of(ModItems.SALT.get(), Items.COD), 1, List.of(1, 1), "", "");
         addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(),  Items.BOWL), 1, List.of(1, 1, 1, 1), "", "");
 //        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(), ModItems.TOMATO.get(), ModItems.ONION.get(), Items.BOWL), 1, List.of(1, 1, 1, 1, 1, 1), "", "");
-        addSimpleShapelessRecipe(ModItems.MINI_CHARCOAL.get(), List.of(Items.CHARCOAL), 8, List.of(1), "mini_coal", "");
-        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModItems.MINI_CHARCOAL.get()), 1, List.of(8), "coal", "");
+        addSimpleShapelessRecipe(ModItems.CREME_BRULEE.get(), List.of(ModItems.RAMEKIN.get(),Items.EGG, Items.SUGAR, Items.MILK_BUCKET), 1, List.of(1, 1, 1, 1), "", "");
+        addSimpleShapelessRecipe(ModItems.MINI_CHARCOAL.get(), List.of(Items.CHARCOAL), 8, List.of(1), "mini_coal", "charcoal");
+        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModItems.MINI_CHARCOAL.get()), 1, List.of(8), "coal", "coal");
         addSimpleShapelessRecipe(ModItems.MINI_COAL.get(), List.of(Items.COAL), 8, List.of(1), "mini_coal", "");
         addSimpleShapelessRecipe(Items.COAL, List.of(ModItems.MINI_COAL.get()), 1, List.of(8), "coal", "");
 
@@ -182,8 +183,12 @@ public class ModRecipeProvider extends RecipeProvider {
             builder.requires(base.get(i), baseCount.get(i));
         }
         builder.unlockedBy(getHasName(base.getFirst()), has(base.getFirst()))
-                .group(group)
-                .save(output, id);
+                .group(group);
+        if (Objects.equals(fromIngredient, "")) {
+            builder.save(output);
+        } else {
+            builder.save(output, id);
+        }
     }
 
     private void addSimpleCookingRecipe(ItemLike base, RecipeCategory recipeCategory, CookingBookCategory cookingBookCategory, ItemLike result, float experience, String fromIngredient, boolean smelt, boolean campfire, boolean smoke, boolean blast) {

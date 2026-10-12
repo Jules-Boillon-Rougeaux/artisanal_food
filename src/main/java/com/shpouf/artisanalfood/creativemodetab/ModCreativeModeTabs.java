@@ -38,9 +38,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CORNSTARCH);
                         output.accept(ModItems.RAMEKIN);
 
-                        output.accept(ModItems.CREME_BRULEE);
+                        output.accept(ModItems.SALTED_COD);
                         output.accept(ModItems.BOWL_OF_RATATOUILLE);
                         output.accept(ModItems.VEGETABLE_SOUP);
+
+                        output.accept(ModItems.CREME_BRULEE);
 
                         output.accept(ModItems.MINI_CHARCOAL);
                         output.accept(ModItems.MINI_COAL);
