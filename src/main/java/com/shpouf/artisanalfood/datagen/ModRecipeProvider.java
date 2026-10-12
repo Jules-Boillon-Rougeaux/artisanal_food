@@ -39,66 +39,25 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
-        addSimpleShapelessRecipe(Items.COAL, List.of(ModItems.MINI_COAL.get()), 1, List.of(8), "");
-        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModItems.MINI_CHARCOAL.get()), 1, List.of(8), "");
-        addSimpleShapelessRecipe(ModItems.SALT.get(), List.of(ModBlocks.SALT_BLOCK.get()), 9, List.of(1), "");
-        addSimpleShapelessRecipe(ModItems.MINI_COAL.get(), List.of(Items.COAL), 8, List.of(1), "");
-        addSimpleShapelessRecipe(ModItems.MINI_CHARCOAL.get(), List.of(Items.CHARCOAL), 8, List.of(1), "");
-        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModBlocks.CHARCOAL_BLOCK.get()), 9, List.of(1), "");
-        addSimpleShapelessRecipe(ModItems.CORN_SEEDS.get(), List.of(ModItems.CORN.get()), 2, List.of(1), "");
-        addSimpleShapelessRecipe(ModItems.BELL_PEPPER_SEEDS.get(), List.of(ModItems.RED_BELL_PEPPER.get()), 1, List.of(1), "");
-        addSimpleShapelessRecipe(ModItems.EGGPLANT_SEEDS.get(), List.of(ModItems.EGGPLANT.get()), 1, List.of(1), "");
-        addSimpleShapelessRecipe(ModItems.ZUCCHINI_SEEDS.get(), List.of(ModItems.ZUCCHINI.get()), 1, List.of(1), "");
-        addSimpleShapelessRecipe(ModItems.SPARKLING_POWDER.get(), List.of(Items.GLOWSTONE_DUST, Items.AMETHYST_SHARD), 1, List.of(2, 1), "");
-        addSimpleShapelessRecipe(ModItems.CREME_BRULEE.get(), List.of(ModItems.RAMEKIN.get(),Items.EGG, Items.SUGAR, Items.MILK_BUCKET), 1, List.of(1, 1, 1, 1), "");
-        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(),  Items.BOWL), 1, List.of(1, 1, 1, 1), "");
+        //  StoneCutting
+        addStonecutterRecipe(ModBlocks.POLISHED_SALT_BLOCK.get(), List.of(ModBlocks.SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_BRICKS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_STAIRS.get(), List.of(ModBlocks.SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_WALL.get(), List.of(ModBlocks.SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.POLISHED_SALT_STAIRS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.POLISHED_SALT_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.POLISHED_SALT_WALL.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_BRICKS_STAIRS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_BRICKS_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_BRICKS_WALL.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
 
-        shapeless(RecipeCategory.MISC, ModItems.VEGETABLE_SOUP, 1)
-                .requires(Tags.Items.FOODS_VEGETABLE)
-                .requires(Tags.Items.FOODS_VEGETABLE)
-                .requires(Tags.Items.FOODS_VEGETABLE)
-                .requires(Items.POTATO)
-//                .requires(Items.ONION)
-                .requires(Items.BOWL)
-                .unlockedBy("has_bowl", has(Items.BOWL))
-                .group("vegetable_soup")
-                .save(output, "artisanalfood:vegetable_soup_from_vegetables_shapeless");
-
-        addSimpleShapedRecipe("3x3", ModBlocks.SALT_BLOCK.get(), ModItems.SALT.get(), 1);
-        addSimpleShapedRecipe("3x3", ModBlocks.CHARCOAL_BLOCK.get(), Items.CHARCOAL, 1);
+        //  Shaped
         addSimpleShapedRecipe("2x2", ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BLOCK.get(), 1);
         addSimpleShapedRecipe("2x2", ModBlocks.SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1);
         addSimpleShapedRecipe("2x2", ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BRICKS.get(), 1);
 
-        addStonecutterRecipe(ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BLOCK.get(), 1);
-        addStonecutterRecipe(ModBlocks.SALT_BRICKS.get(), ModBlocks.SALT_BLOCK.get(), 1);
-        addStonecutterRecipe(ModBlocks.SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1);
-        addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BLOCK.get(), 1);
-        addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), 1);
-        addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), ModBlocks.SALT_BRICKS.get(), 1);
-
-        List<ItemLike> SALT_SMELTABLES = List.of(ModBlocks.SALT_ORE, ModBlocks.DEEPSLATE_SALT_ORE);
-
-        oreSmelting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 200, "salt");
-        oreBlasting(SALT_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT.get(), 0.25f, 100, "salt");
-
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, 200)
-                .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
-                .save(this.output, "artisanalfood:corn_smelting");
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, 100)
-                .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
-                .save(this.output, "artisanalfood:corn_smoking");
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ModItems.CORN), RecipeCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, 600)
-                .unlockedBy(getHasName(ModItems.CORN), has(ModItems.CORN))
-                .save(this.output, "artisanalfood:corn_campfire");
-
-        shaped(RecipeCategory.FOOD, ModItems.RAMEKIN, 4)
-                .pattern("A A")
-                .pattern(" A ")
-                .define('A', Items.TERRACOTTA)
-                .unlockedBy(getHasName(Items.TERRACOTTA), has(Items.TERRACOTTA))
-                .group(getItemName(ModItems.RAMEKIN))
-                .save(output, "artisanalfood:ramekin_from_terracotta_shaped");
         shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SPARKLING_GLASS, 4)
                 .pattern(" A ")
                 .pattern("ABA")
@@ -107,7 +66,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('B', ModItems.SPARKLING_POWDER)
                 .unlockedBy(getHasName(ModItems.SPARKLING_POWDER), has(ModItems.SPARKLING_POWDER))
                 .group(getItemName(ModBlocks.SPARKLING_GLASS))
-                .save(output, "artisanalfood:sparkling_glass_from_glass_and_sparkling_powder");
+                .save(output, "artisanalfood:sparkling_glass");
         shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SPARKLING_COBBLESTONE, 4)
                 .pattern(" A ")
                 .pattern("ABA")
@@ -116,8 +75,40 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('B', ModItems.SPARKLING_POWDER)
                 .unlockedBy(getHasName(ModItems.SPARKLING_POWDER.get()), has(ModItems.SPARKLING_POWDER))
                 .group(getItemName(ModBlocks.SPARKLING_COBBLESTONE))
-                .save(output, "artisanalfood:sparkling_cobblestone_from_cobblestone_and_sparkling_powder");
+                .save(output, "artisanalfood:sparkling_cobblestone");
+        shaped(RecipeCategory.FOOD, ModItems.RAMEKIN, 4)
+                .pattern("A A")
+                .pattern(" A ")
+                .define('A', Items.TERRACOTTA)
+                .unlockedBy(getHasName(Items.TERRACOTTA), has(Items.TERRACOTTA))
+                .group(getItemName(ModItems.RAMEKIN))
+                .save(output, "artisanalfood:ramekin");
 
+
+        //  Shapeless
+        addSimpleShapelessRecipe(ModBlocks.CHARCOAL_BLOCK.get(), List.of(Items.CHARCOAL), 1, List.of(9), "coal_block", "");
+        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModBlocks.CHARCOAL_BLOCK.get()), 9, List.of(1), "coal", "");
+        addSimpleShapelessRecipe(ModBlocks.SALT_BLOCK.get(), List.of(ModItems.SALT.get()), 1, List.of(9), "", "");
+        addSimpleShapelessRecipe(ModItems.SALT.get(), List.of(ModBlocks.SALT_BLOCK.get()), 9, List.of(1), "", "");
+        addSimpleShapelessRecipe(ModItems.CORN_SEEDS.get(), List.of(ModItems.CORN.get()), 2, List.of(1), "seeds", "");
+        addSimpleShapelessRecipe(ModItems.BELL_PEPPER_SEEDS.get(), List.of(ModItems.RED_BELL_PEPPER.get()), 1, List.of(1), "seeds", "");
+        addSimpleShapelessRecipe(ModItems.EGGPLANT_SEEDS.get(), List.of(ModItems.EGGPLANT.get()), 1, List.of(1), "seeds", "");
+        addSimpleShapelessRecipe(ModItems.ZUCCHINI_SEEDS.get(), List.of(ModItems.ZUCCHINI.get()), 1, List.of(1), "seeds", "");
+        addSimpleShapelessRecipe(ModItems.SPARKLING_POWDER.get(), List.of(Items.GLOWSTONE_DUST, Items.AMETHYST_SHARD), 1, List.of(2, 1), "", "");
+        addSimpleShapelessRecipe(ModItems.CREME_BRULEE.get(), List.of(ModItems.RAMEKIN.get(),Items.EGG, Items.SUGAR, Items.MILK_BUCKET), 1, List.of(1, 1, 1, 1), "", "");
+        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(),  Items.BOWL), 1, List.of(1, 1, 1, 1), "", "");
+//        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(), ModItems.TOMATO.get(), ModItems.ONION.get(), Items.BOWL), 1, List.of(1, 1, 1, 1, 1, 1), "", "");
+        addSimpleShapelessRecipe(ModItems.MINI_CHARCOAL.get(), List.of(Items.CHARCOAL), 8, List.of(1), "mini_coal", "");
+        addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModItems.MINI_CHARCOAL.get()), 1, List.of(8), "coal", "");
+        addSimpleShapelessRecipe(ModItems.MINI_COAL.get(), List.of(Items.COAL), 8, List.of(1), "mini_coal", "");
+        addSimpleShapelessRecipe(Items.COAL, List.of(ModItems.MINI_COAL.get()), 1, List.of(8), "coal", "");
+
+        //  Smelting
+        addSimpleCookingRecipe(ModBlocks.SALT_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT, 0.5f, "salt_ore", true, false, false, true);
+        addSimpleCookingRecipe(ModBlocks.DEEPSLATE_SALT_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT, 0.5f, "deepslate_salt_ore", true, false, false, true);
+        addSimpleCookingRecipe(ModItems.CORN, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, "", true, true, true, false);
+
+        // Other
         stairBuilder(ModBlocks.SALT_STAIRS.get(), Ingredient.of(ModBlocks.SALT_BLOCK))
                 .unlockedBy(getHasName(ModBlocks.SALT_BLOCK.get()), has(ModBlocks.SALT_BLOCK))
                 .group("salt_stairs").save(output, "artisanalfood:salt_stairs_from_salt_block");
@@ -135,38 +126,51 @@ public class ModRecipeProvider extends RecipeProvider {
                 .group("salt_stairs").save(output, "artisanalfood:salt_bricks_stairs_from_salt_bricks");
         slab(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_BRICKS_SLAB.get(), ModBlocks.SALT_BRICKS.get());
         wall(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SALT_BRICKS_WALL.get(), ModBlocks.SALT_BRICKS.get());
+
+        shapeless(RecipeCategory.MISC, ModItems.VEGETABLE_SOUP, 1)
+                .requires(Tags.Items.FOODS_VEGETABLE)
+                .requires(Tags.Items.FOODS_VEGETABLE)
+                .requires(Tags.Items.FOODS_VEGETABLE)
+                .requires(Items.POTATO)
+//                .requires(Items.ONION)
+                .requires(Items.BOWL)
+                .unlockedBy("has_bowl", has(Items.BOWL))
+                .group("vegetable_soup")
+                .save(output, "artisanalfood:vegetable_soup_from_vegetables_shapeless");
+
     }
 
-    private void addStonecutterRecipe(ItemLike result, ItemLike base, int resultCount) {
-        SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.BUILDING_BLOCKS, result, resultCount)
-                .unlockedBy(getHasName(base), this.has(base))
-                .save(this.output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base) + "_stonecutting");
-    }
-
-    private void addSimpleShapedRecipe(String recipeShape, ItemLike result, ItemLike base, int resultCount) {
-        if (Objects.equals(recipeShape, "3x3")) {
-            shaped(RecipeCategory.BUILDING_BLOCKS, result, resultCount)
-                    .pattern("AAA")
-                    .pattern("AAA")
-                    .pattern("AAA")
-                    .define('A', base)
-                    .unlockedBy(getHasName(base), has(base))
-                    .group(getItemName(result))
-                    .save(output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base) + "_shaped");
-        } else if (Objects.equals(recipeShape, "2x2")) {
-            shaped(RecipeCategory.BUILDING_BLOCKS, result, resultCount)
-                    .pattern("AA")
-                    .pattern("AA")
-                    .define('A', base)
-                    .unlockedBy(getHasName(base), has(base))
-                    .group(getItemName(result))
-                    .save(output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base) + "_shaped");
+    private void addStonecutterRecipe(ItemLike result, List<ItemLike> bases, int resultCount) {
+        for (ItemLike base : bases) {
+            SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.BUILDING_BLOCKS, result, resultCount)
+                    .unlockedBy(getHasName(base), this.has(base))
+                    .save(this.output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base) + "_stonecutting");
         }
     }
 
-    private void addSimpleShapelessRecipe(ItemLike result, List<ItemLike> base, int resultCount, List<Integer> baseCount, String group) {
+    private void addSimpleShapedRecipe(String recipeShape, ItemLike result, ItemLike base, int resultCount) {
+        if (Objects.equals(recipeShape, "2x2")) {
+            shaped(RecipeCategory.BUILDING_BLOCKS, result, resultCount)
+                    .pattern("AA")
+                    .pattern("AA")
+                    .define('A', base)
+                    .unlockedBy(getHasName(base), has(base))
+                    .group(getItemName(result))
+                    .save(output);
+        } else {
+            throw new IllegalArgumentException(
+                    String.format("recipeShape '%s' is not known", recipeShape)
+            );
+        }
+    }
+
+    private void addSimpleShapelessRecipe(ItemLike result, List<ItemLike> base, int resultCount, List<Integer> baseCount, String group, String fromIngredient) {
         if (Objects.equals(group, "")) {
             group = getItemName(result);
+        }
+        String id = "artisanalfood:" + getItemName(result);
+        if(!Objects.equals(fromIngredient, "")) {
+            id += "_from_" + fromIngredient;
         }
         if (base.size() != baseCount.size()) {
             throw new IllegalArgumentException(
@@ -180,17 +184,36 @@ public class ModRecipeProvider extends RecipeProvider {
         }
         builder.unlockedBy(getHasName(base.getFirst()), has(base.getFirst()))
                 .group(group)
-                .save(output, "artisanalfood:" + getItemName(result) + "_from_" + getItemName(base.getFirst()) + "_shapeless");
+                .save(output, id);
     }
 
-    @Override
-    protected <T extends AbstractCookingRecipe> void oreCooking(AbstractCookingRecipe.Factory<T> factory, List<ItemLike> smeltables,
-                                                                RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result,
-                                                                float experience, int cookingTime, String group, String fromDesc) {
-        for(ItemLike itemlike : smeltables) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), craftingCategory, cookingCategory, result, experience, cookingTime, factory).group(group).unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(output, "artisanalfood:" + getItemName(result) + fromDesc + "_" + getItemName(itemlike));
+    private void addSimpleCookingRecipe(ItemLike base, RecipeCategory recipeCategory, CookingBookCategory cookingBookCategory, ItemLike result, float experience, String fromIngredient, boolean smelt, boolean campfire, boolean smoke, boolean blast) {
+        if (!Objects.equals(fromIngredient, "")) {
+            fromIngredient = "_from_" + fromIngredient;
+        }
+        if (smelt) {
+            SimpleCookingRecipeBuilder builder = SimpleCookingRecipeBuilder.smelting(Ingredient.of(base), recipeCategory, cookingBookCategory, result, experience, 200)
+                    .unlockedBy(getHasName(base), has(base));
+            if (Objects.equals(fromIngredient, "")) {
+                builder.save(this.output);
+            } else {
+                builder.save(this.output, "artisanalfood:" + getItemName(result) + "_" + fromIngredient);
+            }
+        }
+        if (campfire) {
+            SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(base), recipeCategory, result, experience, 600)
+                    .unlockedBy(getHasName(base), has(base))
+                    .save(this.output, "artisanalfood:" + getItemName(result) + "_from_campfire_cooking" + fromIngredient);
+        }
+        if (smoke) {
+            SimpleCookingRecipeBuilder.smoking(Ingredient.of(base), recipeCategory, result, experience, 100)
+                    .unlockedBy(getHasName(base), has(base))
+                    .save(this.output, "artisanalfood:" + getItemName(result) + "_from_smoking" + fromIngredient);
+        }
+        if (blast) {
+            SimpleCookingRecipeBuilder.blasting(Ingredient.of(base), recipeCategory, cookingBookCategory, result, experience, 100)
+                    .unlockedBy(getHasName(base), has(base))
+                    .save(this.output, "artisanalfood:" + getItemName(result) + "_from_blasting" + fromIngredient);
         }
     }
-
 }
