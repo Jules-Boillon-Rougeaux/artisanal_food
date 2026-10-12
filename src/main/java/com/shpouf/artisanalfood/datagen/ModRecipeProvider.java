@@ -6,7 +6,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -44,13 +43,13 @@ public class ModRecipeProvider extends RecipeProvider {
         addStonecutterRecipe(ModBlocks.SALT_BRICKS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
         addStonecutterRecipe(ModBlocks.CHISELED_SALT_BRICKS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
         addStonecutterRecipe(ModBlocks.SALT_STAIRS.get(), List.of(ModBlocks.SALT_BLOCK.get()), 1);
-        addStonecutterRecipe(ModBlocks.SALT_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get()), 2);
         addStonecutterRecipe(ModBlocks.SALT_WALL.get(), List.of(ModBlocks.SALT_BLOCK.get()), 1);
         addStonecutterRecipe(ModBlocks.POLISHED_SALT_STAIRS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
-        addStonecutterRecipe(ModBlocks.POLISHED_SALT_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
+        addStonecutterRecipe(ModBlocks.POLISHED_SALT_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 2);
         addStonecutterRecipe(ModBlocks.POLISHED_SALT_WALL.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get()), 1);
         addStonecutterRecipe(ModBlocks.SALT_BRICKS_STAIRS.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
-        addStonecutterRecipe(ModBlocks.SALT_BRICKS_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
+        addStonecutterRecipe(ModBlocks.SALT_BRICKS_SLAB.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 2);
         addStonecutterRecipe(ModBlocks.SALT_BRICKS_WALL.get(), List.of(ModBlocks.SALT_BLOCK.get(), ModBlocks.POLISHED_SALT_BLOCK.get(), ModBlocks.SALT_BRICKS.get()), 1);
 
         //  Shaped
