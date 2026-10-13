@@ -72,12 +72,19 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.BELL_PEPPER_CROP.get())
                 .add(ModBlocks.ZUCCHINI_CROP.get())
                 .add(ModBlocks.CORN_CROP.get())
-                .add(ModBlocks.EGGPLANT_CROP.get());
+                .add(ModBlocks.EGGPLANT_CROP.get())
+                .add(ModBlocks.ONION_CROP.get())
+                .add(ModBlocks.TOMATO_CROP.get())
+                .add(ModBlocks.LEEK_CROP.get());
 
         tag(BlockTags.MAINTAINS_FARMLAND)
                 .add(ModBlocks.BELL_PEPPER_CROP.get())
                 .add(ModBlocks.ZUCCHINI_CROP.get())
                 .add(ModBlocks.CORN_CROP.get())
-                .add(ModBlocks.EGGPLANT_CROP.get());
+                .add(ModBlocks.EGGPLANT_CROP.get())
+                .add(ModBlocks.ONION_CROP.get())
+                .add(ModBlocks.TOMATO_CROP.get())
+                .add(ModBlocks.LEEK_CROP.get());
+
     }
 }

@@ -88,6 +88,19 @@ public class ModBlocks {
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
                     ModItems.ZUCCHINI_SEEDS, CROP_SHAPES));
+    public static final DeferredBlock<CustomCropBlock.Age4> ONION_CROP = BLOCKS.registerBlock("onion_crop",
+            properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
+                    ModItems.ONION_SEEDS, CROP_SHAPES));
+    public static final DeferredBlock<CustomCropBlock.Age4> TOMATO_CROP = BLOCKS.registerBlock("tomato_crop",
+            properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
+                    ModItems.TOMATO_SEEDS, CROP_SHAPES));
+    public static final DeferredBlock<CustomCropBlock.Age4> LEEK_CROP = BLOCKS.registerBlock("leek_crop",
+            properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
+                    ModItems.LEEK_SEEDS, CROP_SHAPES));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

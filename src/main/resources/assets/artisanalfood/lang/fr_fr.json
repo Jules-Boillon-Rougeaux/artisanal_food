@@ -18,6 +18,27 @@
   "item.artisanalfood.eggplant_seeds": "Graines d'aubergine",
   "item.artisanalfood.bell_pepper_seeds": "Graines de poivron",
   "item.artisanalfood.zucchini_seeds": "Graines de courgette",
+  "item.artisanalfood.sweet_berries_jam": "Confiture de baies sucrées",
+  "item.artisanalfood.honey_candies": "Bonbons au miel",
+  "item.artisanalfood.garlic": "Ail",
+  "item.artisanalfood.onion": "Oignon",
+  "item.artisanalfood.onion_seeds": "Graines d'oignon",
+  "item.artisanalfood.tomato": "Tomate",
+  "item.artisanalfood.tomato_seeds": "Graines de tomate",
+  "item.artisanalfood.popcorn": "Pop-corn",
+  "item.artisanalfood.leek": "Poireau",
+  "item.artisanalfood.leek_pencil": "Poireau",
+  "item.artisanalfood.leek_seeds": "Graines de poireau",
+  "item.artisanalfood.tofu": "Tofu",
+  "item.artisanalfood.soybean": "Soja",
+  "item.artisanalfood.soy_milk": "Lait de soja",
+  "item.artisanalfood.sardine": "Sardine",
+  "item.artisanalfood.grilled_sardine": "Sardine grillée",
+  "item.artisanalfood.tentacle": "Tentacule de calamar",
+  "item.artisanalfood.grilled_tentacle": "Tentacule de calamar grillé",
+  "item.artisanalfood.candy_apple": "Pomme d'amour",
+  "item.artisanalfood.salted_cod": "Morue",
+
   "block.artisanalfood.charcoal_block": "Bloc de charbon de bois",
   "block.artisanalfood.salt_ore": "Minerai de sel",
   "block.artisanalfood.deepslate_salt_ore": "Minerai de sel des abîmes",
@@ -39,5 +60,11 @@
 
   "creativetab.artisanalfood.af_blocks": "AF Blocs",
   "creativetab.artisanalfood.af_items": "AF Objets",
-  "tooltip.artisanalfood.cornseeds.tooltip": "Avez-vous essayé de le cuisiner ?"
+  "tooltip.artisanalfood.cornseeds.tooltip": "Avez-vous essayé de le cuisiner ?",
+
+  "item.minecraft.cod": "Cabillaud cru",
+  "item.minecraft.cooked_cod": "Cabillaud cuit",
+  "item.minecraft.cod_spawn_egg": "Oeuf d'apparition de cabillaud",
+  "item.minecraft.cod_bucket": "Cabillaud dans un seau"
+
 }

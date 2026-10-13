@@ -22,47 +22,94 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.BELL_PEPPER_SEEDS.get())
                 .add(ModItems.EGGPLANT_SEEDS.get())
                 .add(ModItems.CORN_SEEDS.get())
+                .add(ModItems.ONION_SEEDS.get())
+                .add(ModItems.TOMATO_SEEDS.get())
+                .add(ModItems.LEEK_SEEDS.get())
                 .add(ModItems.ZUCCHINI_SEEDS.get());
         tag(ItemTags.VILLAGER_PICKS_UP)
                 .add(ModItems.BELL_PEPPER_SEEDS.get())
                 .add(ModItems.EGGPLANT_SEEDS.get())
                 .add(ModItems.CORN_SEEDS.get())
+                .add(ModItems.ONION_SEEDS.get())
+                .add(ModItems.TOMATO_SEEDS.get())
+                .add(ModItems.LEEK_SEEDS.get())
                 .add(ModItems.ZUCCHINI_SEEDS.get());
         tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
                 .add(ModItems.BELL_PEPPER_SEEDS.get())
                 .add(ModItems.EGGPLANT_SEEDS.get())
                 .add(ModItems.CORN_SEEDS.get())
+                .add(ModItems.ONION_SEEDS.get())
+                .add(ModItems.TOMATO_SEEDS.get())
+                .add(ModItems.LEEK_SEEDS.get())
                 .add(ModItems.ZUCCHINI_SEEDS.get());
         tag(ItemTags.PARROT_FOOD)
                 .add(ModItems.BELL_PEPPER_SEEDS.get())
                 .add(ModItems.EGGPLANT_SEEDS.get())
                 .add(ModItems.CORN_SEEDS.get())
+                .add(ModItems.ONION_SEEDS.get())
+                .add(ModItems.TOMATO_SEEDS.get())
+                .add(ModItems.LEEK_SEEDS.get())
                 .add(ModItems.ZUCCHINI_SEEDS.get());
         tag(Tags.Items.SEEDS)
                 .add(ModItems.BELL_PEPPER_SEEDS.get())
                 .add(ModItems.EGGPLANT_SEEDS.get())
                 .add(ModItems.CORN_SEEDS.get())
+                .add(ModItems.ONION_SEEDS.get())
+                .add(ModItems.TOMATO_SEEDS.get())
+                .add(ModItems.LEEK_SEEDS.get())
                 .add(ModItems.ZUCCHINI_SEEDS.get());
+
         tag(Tags.Items.CROPS)
                 .add(ModItems.RED_BELL_PEPPER.get())
                 .add(ModItems.EGGPLANT.get())
+                .add(ModItems.GARLIC.get())
+                .add(ModItems.TOMATO.get())
+                .add(ModItems.ONION.get())
                 .add(ModItems.CORN.get())
+                .add(ModItems.LEEK.get())
+                .add(ModItems.LEEK_PENCIL.get())
                 .add(ModItems.ZUCCHINI.get());
-
 
         tag(Tags.Items.FOODS_VEGETABLE)
                 .add(ModItems.CORN.get())
                 .add(ModItems.RED_BELL_PEPPER.get())
                 .add(ModItems.ZUCCHINI.get())
                 .add(ModItems.EGGPLANT.get())
+                .add(ModItems.GARLIC.get())
+                .add(ModItems.ONION.get())
+                .add(ModItems.TOMATO.get())
+                .add(ModItems.LEEK.get())
+                .add(ModItems.LEEK_PENCIL.get())
                 .add(Items.BROWN_MUSHROOM)
                 .add(Items.RED_MUSHROOM);
 
         tag(Tags.Items.FOODS)
                 .add(ModItems.GRILLED_CORN.get())
                 .add(ModItems.SALTED_COD.get())
+                .add(ModItems.SWEET_BERRIES_JAM.get())
+                .add(ModItems.POPCORN.get())
                 .add(ModItems.BOWL_OF_RATATOUILLE.get())
-                .add(ModItems.VEGETABLE_SOUP.get())
                 .add(ModItems.CREME_BRULEE.get());
+
+        tag(Tags.Items.FOODS_SOUP)
+                .add(ModItems.VEGETABLE_SOUP.get());
+
+        tag(Tags.Items.FOODS_CANDY)
+                .add(ModItems.HONEY_CANDIES.get())
+                .add(ModItems.CANDY_APPLE.get());
+
+        tag(Tags.Items.DRINKS_MILK)
+                .add(ModItems.SOY_MILK.get());
+
+        tag(Tags.Items.DRINK_CONTAINING_BOTTLE)
+                .add(ModItems.SOY_MILK.get());
+
+        tag(Tags.Items.FOODS_RAW_FISH)
+                .add(ModItems.SARDINE.get())
+                .add(ModItems.TENTACLE.get());
+
+        tag(Tags.Items.FOODS_COOKED_FISH)
+                .add(ModItems.GRILLED_SARDINE.get())
+                .add(ModItems.GRILLED_TENTACLE.get());
     }
 }
