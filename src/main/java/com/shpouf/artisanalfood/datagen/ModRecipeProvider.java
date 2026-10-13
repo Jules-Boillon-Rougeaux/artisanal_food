@@ -82,7 +82,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.TERRACOTTA), has(Items.TERRACOTTA))
                 .group(getItemName(ModItems.RAMEKIN))
                 .save(output);
-
+        shaped(RecipeCategory.FOOD, ModItems.CANDY_APPLE, 1)
+                .pattern(" C ")
+                .pattern("CAC")
+                .pattern("BC ")
+                .define('A', Items.APPLE)
+                .define('B', Items.STICK)
+                .define('C', Items.SUGAR)
+                .unlockedBy(getHasName(Items.APPLE), has(Items.APPLE))
+                .group(getItemName(ModItems.CANDY_APPLE))
+                .save(output);
 
         //  Shapeless
         addSimpleShapelessRecipe(ModBlocks.CHARCOAL_BLOCK.get(), List.of(Items.CHARCOAL), 1, List.of(9), "coal_block", "charcoal");
@@ -95,18 +104,22 @@ public class ModRecipeProvider extends RecipeProvider {
         addSimpleShapelessRecipe(ModItems.ZUCCHINI_SEEDS.get(), List.of(ModItems.ZUCCHINI.get()), 1, List.of(1), "seeds", "");
         addSimpleShapelessRecipe(ModItems.SPARKLING_POWDER.get(), List.of(Items.GLOWSTONE_DUST, Items.AMETHYST_SHARD), 1, List.of(2, 1), "", "");
         addSimpleShapelessRecipe(ModItems.SALTED_COD.get(), List.of(ModItems.SALT.get(), Items.COD), 1, List.of(1, 1), "", "");
-        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(),  Items.BOWL), 1, List.of(1, 1, 1, 1), "", "");
-//        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(), ModItems.TOMATO.get(), ModItems.ONION.get(), Items.BOWL), 1, List.of(1, 1, 1, 1, 1, 1), "", "");
+        addSimpleShapelessRecipe(ModItems.BOWL_OF_RATATOUILLE, List.of(ModItems.EGGPLANT.get(), ModItems.ZUCCHINI.get(), ModItems.RED_BELL_PEPPER.get(), ModItems.TOMATO.get(), ModItems.ONION.get(), Items.BOWL), 1, List.of(1, 1, 1, 1, 1, 1), "", "");
         addSimpleShapelessRecipe(ModItems.CREME_BRULEE.get(), List.of(ModItems.RAMEKIN.get(),Items.EGG, Items.SUGAR, Items.MILK_BUCKET), 1, List.of(1, 1, 1, 1), "", "");
         addSimpleShapelessRecipe(ModItems.MINI_CHARCOAL.get(), List.of(Items.CHARCOAL), 8, List.of(1), "mini_coal", "charcoal");
         addSimpleShapelessRecipe(Items.CHARCOAL, List.of(ModItems.MINI_CHARCOAL.get()), 1, List.of(8), "coal", "coal");
         addSimpleShapelessRecipe(ModItems.MINI_COAL.get(), List.of(Items.COAL), 8, List.of(1), "mini_coal", "");
         addSimpleShapelessRecipe(Items.COAL, List.of(ModItems.MINI_COAL.get()), 1, List.of(8), "coal", "");
+        addSimpleShapelessRecipe(ModItems.SWEET_BERRIES_JAM.get(), List.of(Items.SUGAR, Items.SWEET_BERRIES, Items.GLASS_BOTTLE), 1, List.of(1, 1, 1), "jam", "");
+        addSimpleShapelessRecipe(ModItems.TOMATO_SEEDS.get(), List.of(ModItems.TOMATO.get()), 1, List.of(1), "seeds", "");
 
         //  Smelting
         addSimpleCookingRecipe(ModBlocks.SALT_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT, 0.5f, "salt_ore", true, false, false, true);
         addSimpleCookingRecipe(ModBlocks.DEEPSLATE_SALT_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT, 0.5f, "deepslate_salt_ore", true, false, false, true);
         addSimpleCookingRecipe(ModItems.CORN, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, "", true, true, true, false);
+        addSimpleCookingRecipe(ModItems.CORN_SEEDS, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.POPCORN, 0.25f, "", true, true, true, false);
+        addSimpleCookingRecipe(ModItems.SARDINE, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_SARDINE, 0.25f, "", true, true, true, false);
+        addSimpleCookingRecipe(ModItems.TENTACLE, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_TENTACLE, 0.25f, "", true, true, true, false);
 
         // Other
         stairBuilder(ModBlocks.SALT_STAIRS.get(), Ingredient.of(ModBlocks.SALT_BLOCK))
@@ -132,7 +145,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Tags.Items.FOODS_VEGETABLE)
                 .requires(Tags.Items.FOODS_VEGETABLE)
                 .requires(Items.POTATO)
-//                .requires(Items.ONION)
+                .requires(ModItems.ONION)
                 .requires(Items.BOWL)
                 .unlockedBy("has_bowl", has(Items.BOWL))
                 .group("vegetable_soup")

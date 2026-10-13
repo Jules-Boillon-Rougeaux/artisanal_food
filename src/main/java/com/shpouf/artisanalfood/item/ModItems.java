@@ -97,7 +97,7 @@ public class ModItems {
             properties -> new Item(properties.food(ModFoods.GRILLED_TENTACLE, ModFoods.GRILLED_TENTACLE_CONSUMABLE)));
 
     public static final DeferredItem<Item> CANDY_APPLE = ITEMS.registerItem("candy_apple",
-            properties -> new Item(properties.food(ModFoods.CANDY_APPLE, ModFoods.CANDY_APPLE_CONSUMABLE)));
+            properties -> new Item(properties.food(ModFoods.CANDY_APPLE, ModFoods.CANDY_APPLE_CONSUMABLE).stacksTo(16).usingConvertsTo(Items.STICK)));
 
     public static final DeferredItem<Item> SOY_MILK = ITEMS.registerItem("soy_milk",
             properties -> new Item(properties.food(ModFoods.SOY_MILK, ModFoods.SOY_MILK_CONSUMABLE).stacksTo(4).usingConvertsTo(Items.GLASS_BOTTLE)));
