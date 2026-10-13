@@ -1,8 +1,13 @@
 package com.shpouf.artisanalfood.food;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
+import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 
 public class ModFoods {
     public static final FoodProperties CORN_SEEDS = new FoodProperties.Builder().nutrition(1).saturationModifier(0.5f).build();
@@ -42,7 +47,7 @@ public class ModFoods {
     public static final Consumable TOMATO_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
     
     public static final FoodProperties POPCORN = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
-    public static final Consumable POPCORN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
+    public static final Consumable POPCORN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(0.8F).build();
     
     public static final FoodProperties LEEK = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
     public static final Consumable LEEK_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
@@ -66,13 +71,19 @@ public class ModFoods {
     public static final Consumable GRILLED_TENTACLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
     
     public static final FoodProperties CANDY_APPLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
-    public static final Consumable CANDY_APPLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(2.4F).build(); // effet de regen
+    public static final Consumable CANDY_APPLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(2.4F)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 400, 2)))
+            .build();
     
     public static final FoodProperties SOYBEAN = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
-    public static final Consumable SOYBEAN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build(); //TODO faire du poison
+    public static final Consumable SOYBEAN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.POISON, 60), 0.30f))
+            .build();
     
     public static final FoodProperties SOY_MILK = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
-    public static final Consumable SOY_MILK_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build(); //TODO faire du lait
+    public static final Consumable SOY_MILK_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).onConsume(new ClearAllStatusEffectsConsumeEffect())
+            .animation(ItemUseAnimation.DRINK)
+            .build();
     
     public static final FoodProperties BOWL_OF_RATATOUILLE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).build();
     public static final Consumable BOWL_OF_RATATOUILLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
