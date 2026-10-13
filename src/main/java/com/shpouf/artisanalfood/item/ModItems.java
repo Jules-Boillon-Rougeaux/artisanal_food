@@ -96,6 +96,7 @@ public class ModItems {
     public static final DeferredItem<Item> CORN_SEEDS = ITEMS.registerItem("corn_seeds",
             properties -> new BlockItem(ModBlocks.CORN_CROP.get(), properties.food(ModFoods.CORN_SEEDS, ModFoods.CORN_SEEDS_CONSUMABLE)) {
                 @Override
+                @SuppressWarnings("deprecation")
                 public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
                     builder.accept(Component.translatable("tooltip.artisanalfood.cornseeds.tooltip"));
                     super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
