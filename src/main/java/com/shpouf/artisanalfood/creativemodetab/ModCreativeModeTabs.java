@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.artisanalfood.af_items"))
                     .withTabsAfter(Identifier.fromNamespaceAndPath(ArtisanalFood.MOD_ID, "af_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        // Vegetables with seed and cooked version
                         output.accept(ModItems.CORN_SEEDS);
                         output.accept(ModItems.POPCORN);
                         output.accept(ModItems.CORN);
@@ -32,7 +33,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.EGGPLANT);
                         output.accept(ModItems.ZUCCHINI_SEEDS);
                         output.accept(ModItems.ZUCCHINI);
-                        output.accept(ModItems.GARLIC);
                         output.accept(ModItems.ONION_SEEDS);
                         output.accept(ModItems.ONION);
                         output.accept(ModItems.TOMATO_SEEDS);
@@ -41,30 +41,33 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LEEK_PENCIL);
                         output.accept(ModItems.LEEK);
                         output.accept(ModItems.SOYBEAN);
-
+                        output.accept(ModItems.GARLIC);
+                        // Non-eatable ingredients
                         output.accept(ModItems.WHEAT_FLOUR);
                         output.accept(ModItems.SALT);
-                        output.accept(ModItems.SPARKLING_POWDER);
                         output.accept(ModItems.CORNSTARCH);
+                        output.accept(ModItems.SPARKLING_POWDER);
                         output.accept(ModItems.RAMEKIN);
-
+                        // Meat/Fish
                         output.accept(ModItems.SARDINE);
                         output.accept(ModItems.GRILLED_SARDINE);
                         output.accept(ModItems.TENTACLE);
                         output.accept(ModItems.GRILLED_TENTACLE);
                         output.accept(ModItems.SALTED_COD);
-                        output.accept(ModItems.TOFU);
+                        // Small preparation
                         output.accept(ModItems.SOY_MILK);
-                        output.accept(ModItems.BOWL_OF_RATATOUILLE);
-                        output.accept(ModItems.VEGETABLE_SOUP);
-
-                        output.accept(ModItems.SWEET_BERRIES_JAM);
+                        output.accept(ModItems.TOFU);
+                        // Sweet food
                         output.accept(ModItems.HONEY_CANDIES);
+                        output.accept(ModItems.SWEET_BERRIES_JAM);
                         output.accept(ModItems.CANDY_APPLE);
                         output.accept(ModItems.CREME_BRULEE);
-
-                        output.accept(ModItems.MINI_CHARCOAL);
+                        // Big food
+                        output.accept(ModItems.BOWL_OF_RATATOUILLE);
+                        output.accept(ModItems.VEGETABLE_SOUP);
+                        // Other
                         output.accept(ModItems.MINI_COAL);
+                        output.accept(ModItems.MINI_CHARCOAL);
                     }).build());
 
     public static final Supplier<CreativeModeTab> AF_BLOCKS_TAB = CREATIVE_MODE_TABS.register("af_blocks_tab",

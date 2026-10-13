@@ -15,7 +15,7 @@ public class ModFoods {
     public static final FoodProperties CORN_SEEDS = new FoodProperties.Builder().nutrition(1).saturationModifier(0f).build();
     public static final Consumable CORN_SEEDS_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.2F).build();
 
-    public static final FoodProperties POPCORN = new FoodProperties.Builder().nutrition(1).saturationModifier(0.5f).build();
+    public static final FoodProperties POPCORN = new FoodProperties.Builder().nutrition(1).saturationModifier(0.5f).alwaysEdible().build();
     public static final Consumable POPCORN_CONSUMABLE = Consumables.defaultFood().consumeSeconds(0.2F).build();
 
     public static final FoodProperties CORN = new FoodProperties.Builder().nutrition(2).saturationModifier(0.25f).build();
