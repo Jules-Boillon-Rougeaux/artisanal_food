@@ -1,5 +1,6 @@
 package com.shpouf.artisanalfood.food;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -8,6 +9,7 @@ import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
+import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
 
 public class ModFoods {
     public static final FoodProperties CORN_SEEDS = new FoodProperties.Builder().nutrition(1).saturationModifier(0.5f).build();
@@ -33,10 +35,7 @@ public class ModFoods {
     
     public static final FoodProperties SWEET_BERRIES_JAM = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
     public static final Consumable SWEET_BERRIES_JAM_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
-    
-    public static final FoodProperties HONEY_CANDIES = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
-    public static final Consumable HONEY_CANDIES_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
-    
+
     public static final FoodProperties GARLIC = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
     public static final Consumable GARLIC_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
     
@@ -70,9 +69,9 @@ public class ModFoods {
     public static final FoodProperties GRILLED_TENTACLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
     public static final Consumable GRILLED_TENTACLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
     
-    public static final FoodProperties CANDY_APPLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
+    public static final FoodProperties CANDY_APPLE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).alwaysEdible().build();
     public static final Consumable CANDY_APPLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(2.4F)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 400, 2)))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 1)))
             .build();
     
     public static final FoodProperties SOYBEAN = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
@@ -80,11 +79,16 @@ public class ModFoods {
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.POISON, 60), 0.30f))
             .build();
     
-    public static final FoodProperties SOY_MILK = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).build();
+    public static final FoodProperties SOY_MILK = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).alwaysEdible().build();
     public static final Consumable SOY_MILK_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).onConsume(new ClearAllStatusEffectsConsumeEffect())
-            .animation(ItemUseAnimation.DRINK)
+            .animation(ItemUseAnimation.DRINK).sound(SoundEvents.GENERIC_DRINK)
             .build();
-    
+
+    public static final FoodProperties HONEY_CANDIES = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).alwaysEdible().build();
+    public static final Consumable HONEY_CANDIES_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F)
+            .onConsume(new RemoveStatusEffectsConsumeEffect(MobEffects.POISON))
+            .build();
+
     public static final FoodProperties BOWL_OF_RATATOUILLE = new FoodProperties.Builder().nutrition(7).saturationModifier(0.8f).build();
     public static final Consumable BOWL_OF_RATATOUILLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(1.6F).build();
 
