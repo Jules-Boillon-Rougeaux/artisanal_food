@@ -3,14 +3,16 @@ package com.shpouf.artisanalfood.item;
 import com.shpouf.artisanalfood.ArtisanalFood;
 import com.shpouf.artisanalfood.block.ModBlocks;
 import com.shpouf.artisanalfood.food.ModFoods;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.item.component.ItemLore;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.function.Consumer;
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ArtisanalFood.MOD_ID);
@@ -61,7 +63,14 @@ public class ModItems {
             properties -> new Item(properties.food(ModFoods.TOMATO, ModFoods.TOMATO_CONSUMABLE)));
 
     public static final DeferredItem<Item> POPCORN = ITEMS.registerItem("popcorn",
-            properties -> new Item(properties.food(ModFoods.POPCORN, ModFoods.POPCORN_CONSUMABLE)));
+            properties -> new Item(properties.food(ModFoods.POPCORN, ModFoods.POPCORN_CONSUMABLE)
+                    .component(
+                            DataComponents.LORE, new ItemLore(List.of(
+                                    Component.translatable("tooltip.artisanalfood.popcorn.tooltip")
+                                            .withStyle(ChatFormatting.DARK_GRAY)
+                            ))
+                    )
+            ));
 
     public static final DeferredItem<Item> LEEK = ITEMS.registerItem("leek",
             properties -> new Item(properties.food(ModFoods.LEEK, ModFoods.LEEK_CONSUMABLE)));
@@ -94,14 +103,7 @@ public class ModItems {
             properties -> new Item(properties.food(ModFoods.SOY_MILK, ModFoods.SOY_MILK_CONSUMABLE).stacksTo(4).usingConvertsTo(Items.GLASS_BOTTLE)));
 
     public static final DeferredItem<Item> CORN_SEEDS = ITEMS.registerItem("corn_seeds",
-            properties -> new BlockItem(ModBlocks.CORN_CROP.get(), properties.food(ModFoods.CORN_SEEDS, ModFoods.CORN_SEEDS_CONSUMABLE)) {
-                @Override
-                @SuppressWarnings("deprecation")
-                public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
-                    builder.accept(Component.translatable("tooltip.artisanalfood.cornseeds.tooltip"));
-                    super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
-                }
-            });
+            properties -> new BlockItem(ModBlocks.CORN_CROP.get(), properties.food(ModFoods.CORN_SEEDS, ModFoods.CORN_SEEDS_CONSUMABLE)));
 
     public static final DeferredItem<Item> MINI_CHARCOAL = ITEMS.registerSimpleItem("mini_charcoal");
     public static final DeferredItem<Item> MINI_COAL = ITEMS.registerSimpleItem("mini_coal");

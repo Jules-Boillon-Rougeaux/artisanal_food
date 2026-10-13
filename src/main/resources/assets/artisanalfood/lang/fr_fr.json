@@ -60,7 +60,7 @@
 
   "creativetab.artisanalfood.af_blocks": "AF Blocs",
   "creativetab.artisanalfood.af_items": "AF Objets",
-  "tooltip.artisanalfood.cornseeds.tooltip": "Avez-vous essayé de le cuisiner ?",
+  "tooltip.artisanalfood.popcorn.tooltip": "Ne mange pas si vite !",
 
   "item.minecraft.cod": "Cabillaud cru",
   "item.minecraft.cooked_cod": "Cabillaud cuit",
