@@ -99,7 +99,8 @@ public class ModModelProvider extends ModelProvider {
     private static void createEasyCropBlock(BlockModelGenerators blockModels, CustomCropBlock block) {
         int[] stages = IntStream.rangeClosed(0, block.getMaxAge()).toArray();
         blockModels.createCropBlock(block, block.getAgeProperty(), stages);
-}
+    }
+
     private static void createEasyCropCrossBlock(BlockModelGenerators blockModels, CustomCropBlock block) {
         blockModels.registerSimpleFlatItemModel(block.asItem());
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
@@ -126,8 +127,8 @@ public class ModModelProvider extends ModelProvider {
         model.add("textures", textures);
 
         JsonArray elements = new JsonArray();
-        addCrossPlane(elements, new double[]{0.8, 0, 8}, new double[]{15.2, 16, 8}, "north", "south");
-        addCrossPlane(elements, new double[]{8, 0, 0.8}, new double[]{8, 16, 15.2}, "west", "east");
+        addCrossPlane(elements, new double[]{0.8, -1.0, 8}, new double[]{15.2, 15, 8}, "north", "south");
+        addCrossPlane(elements, new double[]{8, -1.0, 0.8}, new double[]{8, 15, 15.2}, "west", "east");
         model.add("elements", elements);
 
         blockModels.modelOutput.accept(modelId, () -> model);
