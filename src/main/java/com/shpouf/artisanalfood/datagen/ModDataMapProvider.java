@@ -27,19 +27,19 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModItems.CORN_SEEDS.getId(), new Compostable(0.3f), false)
                 .add(ModItems.CORN.getId(), new Compostable(0.5f), false)
                 .add(ModItems.BELL_PEPPER_SEEDS.getId(), new Compostable(0.3f), false)
-                .add(ModItems.RED_BELL_PEPPER.getId(), new Compostable(0.65f), false)
+                .add(ModItems.RED_BELL_PEPPER.getId(), new Compostable(0.5f), false)
                 .add(ModItems.EGGPLANT_SEEDS.getId(), new Compostable(0.3f), false)
                 .add(ModItems.EGGPLANT.getId(), new Compostable(0.5f), false)
                 .add(ModItems.ZUCCHINI_SEEDS.getId(), new Compostable(0.3f), false)
                 .add(ModItems.ZUCCHINI.getId(), new Compostable(0.5f), false)
                 .add(ModItems.GARLIC.getId(), new Compostable(0.5f), false)
                 .add(ModItems.ONION.getId(), new Compostable(0.5f), false)
-                .add(ModItems.ONION_SEEDS.getId(), new Compostable(0.5f), false)
+                .add(ModItems.ONION_SEEDS.getId(), new Compostable(0.3f), false)
                 .add(ModItems.TOMATO.getId(), new Compostable(0.5f), false)
-                .add(ModItems.TOMATO_SEEDS.getId(), new Compostable(0.5f), false)
+                .add(ModItems.TOMATO_SEEDS.getId(), new Compostable(0.3f), false)
                 .add(ModItems.LEEK.getId(), new Compostable(0.5f), false)
-                .add(ModItems.LEEK_PENCIL.getId(), new Compostable(0.5f), false)
-                .add(ModItems.LEEK_SEEDS.getId(), new Compostable(0.5f), false)
-                .add(ModItems.SOYBEAN.getId(), new Compostable(0.5f), false);
+                .add(ModItems.LEEK_PENCIL.getId(), new Compostable(0.3f), false)
+                .add(ModItems.LEEK_SEEDS.getId(), new Compostable(0.3f), false)
+                .add(ModItems.SOYBEAN.getId(), new Compostable(0.3f), false);
     }
 }
