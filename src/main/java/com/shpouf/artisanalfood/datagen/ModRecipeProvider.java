@@ -85,7 +85,7 @@ public class ModRecipeProvider extends RecipeProvider {
         shaped(RecipeCategory.FOOD, ModItems.CANDY_APPLE, 1)
                 .pattern(" C ")
                 .pattern("CAC")
-                .pattern("BC ")
+                .pattern(" B ")
                 .define('A', Items.APPLE)
                 .define('B', Items.STICK)
                 .define('C', Items.SUGAR)
@@ -145,8 +145,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Tags.Items.FOODS_VEGETABLE)
                 .requires(Tags.Items.FOODS_VEGETABLE)
                 .requires(Items.POTATO)
-                .requires(ModItems.ONION)
                 .requires(Items.BOWL)
+                .requires(ModItems.ONION)
                 .unlockedBy("has_bowl", has(Items.BOWL))
                 .group("vegetable_soup")
                 .save(output, "artisanalfood:vegetable_soup_from_vegetables_shapeless");

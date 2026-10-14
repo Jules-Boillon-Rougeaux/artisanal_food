@@ -94,7 +94,7 @@ public class ModFoods {
 
     public static final FoodProperties CANDY_APPLE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.75f).alwaysEdible().build();
     public static final Consumable CANDY_APPLE_CONSUMABLE = Consumables.defaultFood().consumeSeconds(2.4F)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 1), 0.25F))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 2400, 0, false, false), 0.25F))
             .build();
 
     public static final FoodProperties CREME_BRULEE = new FoodProperties.Builder().nutrition(2).saturationModifier(1.25f).build();
