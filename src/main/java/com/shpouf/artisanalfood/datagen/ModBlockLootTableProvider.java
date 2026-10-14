@@ -61,6 +61,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         addCropDrops(ModBlocks.EGGPLANT_CROP.get(), ModItems.EGGPLANT.get(), ModItems.EGGPLANT_SEEDS.get());
         addCropDrops(ModBlocks.ZUCCHINI_CROP.get(), ModItems.ZUCCHINI.get(), ModItems.ZUCCHINI_SEEDS.get());
         addCropDrops(ModBlocks.ONION_CROP.get(), ModItems.ONION.get(), ModItems.ONION_SEEDS.get());
+        addCropDrops(ModBlocks.GARLIC_CROP.get(), ModItems.GARLIC.get(), ModItems.GARLIC.get());
         addCropDrops(ModBlocks.TOMATO_CROP.get(), ModItems.TOMATO.get(), ModItems.TOMATO_SEEDS.get());
         addCropDrops(ModBlocks.LEEK_CROP.get(), ModItems.LEEK.get(), ModItems.LEEK_SEEDS.get());
     }

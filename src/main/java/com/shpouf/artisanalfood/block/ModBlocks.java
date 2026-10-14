@@ -88,6 +88,10 @@ public class ModBlocks {
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
                     ModItems.ONION_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
+    public static final DeferredBlock<CustomCropBlock.Age4> GARLIC_CROP = BLOCKS.registerBlock("garlic_crop",
+            properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
+                    .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
+                    ModItems.GARLIC, ModBlockShapes.BELL_PEPPER_SHAPES));
     public static final DeferredBlock<CustomCropBlock.Age4> TOMATO_CROP = BLOCKS.registerBlock("tomato_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),

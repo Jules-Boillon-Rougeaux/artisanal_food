@@ -53,9 +53,6 @@ public class ModItems {
     public static final DeferredItem<Item> HONEY_CANDIES = ITEMS.registerItem("honey_candies",
             properties -> new Item(properties.food(ModFoods.HONEY_CANDIES, ModFoods.HONEY_CANDIES_CONSUMABLE)));
 
-    public static final DeferredItem<Item> GARLIC = ITEMS.registerItem("garlic",
-            properties -> new Item(properties.food(ModFoods.GARLIC, ModFoods.GARLIC_CONSUMABLE)));
-
     public static final DeferredItem<Item> ONION = ITEMS.registerItem("onion",
             properties -> new Item(properties.food(ModFoods.ONION, ModFoods.ONION_CONSUMABLE)));
 
@@ -116,6 +113,10 @@ public class ModItems {
             properties -> new BlockItem(ModBlocks.ZUCCHINI_CROP.get(), properties));
     public static final DeferredItem<Item> ONION_SEEDS = ITEMS.registerItem("onion_seeds",
             properties -> new BlockItem(ModBlocks.ONION_CROP.get(), properties));
+
+    public static final DeferredItem<Item> GARLIC = ITEMS.registerItem("garlic",
+            properties -> new BlockItem(ModBlocks.GARLIC_CROP.get(), properties.food(ModFoods.GARLIC, ModFoods.GARLIC_CONSUMABLE)));
+
     public static final DeferredItem<Item> TOMATO_SEEDS = ITEMS.registerItem("tomato_seeds",
             properties -> new BlockItem(ModBlocks.TOMATO_CROP.get(), properties));
     public static final DeferredItem<Item> LEEK_SEEDS = ITEMS.registerItem("leek_seeds",

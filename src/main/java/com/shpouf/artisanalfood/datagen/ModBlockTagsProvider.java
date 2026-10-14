@@ -74,6 +74,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.CORN_CROP.get())
                 .add(ModBlocks.EGGPLANT_CROP.get())
                 .add(ModBlocks.ONION_CROP.get())
+                .add(ModBlocks.GARLIC_CROP.get())
                 .add(ModBlocks.TOMATO_CROP.get())
                 .add(ModBlocks.LEEK_CROP.get());
 
@@ -83,6 +84,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.CORN_CROP.get())
                 .add(ModBlocks.EGGPLANT_CROP.get())
                 .add(ModBlocks.ONION_CROP.get())
+                .add(ModBlocks.GARLIC_CROP.get())
                 .add(ModBlocks.TOMATO_CROP.get())
                 .add(ModBlocks.LEEK_CROP.get());
 

@@ -32,7 +32,6 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.ZUCCHINI.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.CORN.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.EGGPLANT.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.GARLIC.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ONION.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.TOMATO.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.LEEK.get(), ModelTemplates.FLAT_ITEM);
@@ -92,6 +91,7 @@ public class ModModelProvider extends ModelProvider {
         createEasyCropCrossBlock(blockModels, ModBlocks.EGGPLANT_CROP.get());
         createEasyCropCrossBlock(blockModels, ModBlocks.ZUCCHINI_CROP.get());
         createEasyCropCrossBlock(blockModels, ModBlocks.ONION_CROP.get());
+        createEasyCropCrossBlock(blockModels, ModBlocks.GARLIC_CROP.get());
         createEasyCropCrossBlock(blockModels, ModBlocks.TOMATO_CROP.get());
         createEasyCropCrossBlock(blockModels, ModBlocks.LEEK_CROP.get());
     }
