@@ -116,10 +116,10 @@ public class ModRecipeProvider extends RecipeProvider {
         //  Smelting
         addSimpleCookingRecipe(ModBlocks.SALT_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT, 0.5f, "salt_ore", true, false, false, true);
         addSimpleCookingRecipe(ModBlocks.DEEPSLATE_SALT_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.SALT, 0.5f, "deepslate_salt_ore", true, false, false, true);
-        addSimpleCookingRecipe(ModItems.CORN, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_CORN, 0.25f, "", true, true, true, false);
-        addSimpleCookingRecipe(ModItems.CORN_SEEDS, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.POPCORN, 0.25f, "", true, true, true, false);
-        addSimpleCookingRecipe(ModItems.SARDINE, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_SARDINE, 0.25f, "", true, true, true, false);
-        addSimpleCookingRecipe(ModItems.TENTACLE, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_TENTACLE, 0.25f, "", true, true, true, false);
+        addSimpleCookingRecipe(ModItems.CORN, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_CORN, 0.35f, "", true, true, true, false);
+        addSimpleCookingRecipe(ModItems.CORN_SEEDS, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.POPCORN, 0.35f, "", true, true, true, false);
+        addSimpleCookingRecipe(ModItems.SARDINE, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_SARDINE, 0.35f, "", true, true, true, false);
+        addSimpleCookingRecipe(ModItems.TENTACLE, RecipeCategory.FOOD, CookingBookCategory.FOOD, ModItems.GRILLED_TENTACLE, 0.35f, "", true, true, true, false);
 
         // Other
         stairBuilder(ModBlocks.SALT_STAIRS.get(), Ingredient.of(ModBlocks.SALT_BLOCK))
