@@ -2,12 +2,12 @@ package com.shpouf.artisanalfood.block;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
 import com.shpouf.artisanalfood.block.custom.CustomCropBlock;
+import com.shpouf.artisanalfood.datagen.ModBlockShapes;
 import com.shpouf.artisanalfood.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -60,7 +60,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> POLISHED_SALT_WALL = registerBlock("polished_salt_wall",
             properties -> new WallBlock(properties.strength(3f).requiresCorrectToolForDrops()));
 
-
     public static final DeferredBlock<Block> SALT_BRICKS_STAIRS = registerBlock("salt_bricks_stairs",
             properties -> new StairBlock(ModBlocks.SALT_BRICKS.get().defaultBlockState(),
                     properties.strength(3f).requiresCorrectToolForDrops()));
@@ -69,37 +68,34 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SALT_BRICKS_WALL = registerBlock("salt_bricks_wall",
             properties -> new WallBlock(properties.strength(3f).requiresCorrectToolForDrops()));
 
-    private static final VoxelShape[] CROP_SHAPES =
-            Block.boxes(4, age -> Block.column(16.0, 0.0, 3 + age * 2));
-
     public static final DeferredBlock<CustomCropBlock.Age4> BELL_PEPPER_CROP = BLOCKS.registerBlock("bell_pepper_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
-                    ModItems.BELL_PEPPER_SEEDS, CROP_SHAPES));
+                    ModItems.BELL_PEPPER_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
     public static final DeferredBlock<CustomCropBlock.Age4> CORN_CROP = BLOCKS.registerBlock("corn_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
-                    ModItems.CORN_SEEDS, CROP_SHAPES));
+                    ModItems.CORN_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
     public static final DeferredBlock<CustomCropBlock.Age4> EGGPLANT_CROP = BLOCKS.registerBlock("eggplant_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
-                    ModItems.EGGPLANT_SEEDS, CROP_SHAPES));
+                    ModItems.EGGPLANT_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
     public static final DeferredBlock<CustomCropBlock.Age4> ZUCCHINI_CROP = BLOCKS.registerBlock("zucchini_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
-                    ModItems.ZUCCHINI_SEEDS, CROP_SHAPES));
+                    ModItems.ZUCCHINI_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
     public static final DeferredBlock<CustomCropBlock.Age4> ONION_CROP = BLOCKS.registerBlock("onion_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
-                    ModItems.ONION_SEEDS, CROP_SHAPES));
+                    ModItems.ONION_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
     public static final DeferredBlock<CustomCropBlock.Age4> TOMATO_CROP = BLOCKS.registerBlock("tomato_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
-                    ModItems.TOMATO_SEEDS, CROP_SHAPES));
+                    ModItems.TOMATO_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
     public static final DeferredBlock<CustomCropBlock.Age4> LEEK_CROP = BLOCKS.registerBlock("leek_crop",
             properties -> new CustomCropBlock.Age4(properties.randomTicks().sound(SoundType.CROP)
                     .instabreak().noCollision().pushReaction(PushReaction.DESTROY),
-                    ModItems.LEEK_SEEDS, CROP_SHAPES));
+                    ModItems.LEEK_SEEDS, ModBlockShapes.BELL_PEPPER_SHAPES));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
