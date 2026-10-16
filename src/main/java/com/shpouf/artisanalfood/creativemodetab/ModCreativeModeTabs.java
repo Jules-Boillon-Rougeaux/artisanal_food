@@ -44,6 +44,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GARLIC);
                         // Non-eatable ingredients
                         output.accept(ModItems.WHEAT_FLOUR);
+                        output.accept(ModItems.INOX_INGOT);
                         output.accept(ModItems.SALT);
                         output.accept(ModItems.CORNSTARCH);
                         output.accept(ModItems.SPARKLING_POWDER);
@@ -68,6 +69,12 @@ public class ModCreativeModeTabs {
                         // Other
                         output.accept(ModItems.MINI_COAL);
                         output.accept(ModItems.MINI_CHARCOAL);
+                        output.accept(ModItems.INOX_SWORD);
+                        output.accept(ModItems.INOX_PICKAXE);
+                        output.accept(ModItems.INOX_SHOVEL);
+                        output.accept(ModItems.INOX_AXE);
+                        output.accept(ModItems.INOX_HOE);
+                        output.accept(ModItems.INOX_SPEAR);
                     }).build());
 
     public static final Supplier<CreativeModeTab> AF_BLOCKS_TAB = CREATIVE_MODE_TABS.register("af_blocks_tab",

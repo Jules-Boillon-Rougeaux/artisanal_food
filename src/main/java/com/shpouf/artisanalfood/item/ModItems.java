@@ -33,6 +33,7 @@ public class ModItems {
     public static final DeferredItem<Item> CORNSTARCH = ITEMS.registerSimpleItem("cornstarch");
     public static final DeferredItem<Item> RAMEKIN = ITEMS.registerSimpleItem("ramekin");
     public static final DeferredItem<Item> WHEAT_FLOUR = ITEMS.registerSimpleItem("wheat_flour");
+    public static final DeferredItem<Item> INOX_INGOT = ITEMS.registerSimpleItem("inox_ingot");
     public static final DeferredItem<Item> SALT = ITEMS.registerSimpleItem("salt");
     public static final DeferredItem<Item> SPARKLING_POWDER = ITEMS.registerSimpleItem("sparkling_powder");
 
@@ -122,6 +123,21 @@ public class ModItems {
     public static final DeferredItem<Item> LEEK_SEEDS = ITEMS.registerItem("leek_seeds",
             properties -> new BlockItem(ModBlocks.LEEK_CROP.get(), properties));
 
+
+    public static final DeferredItem<Item> INOX_SWORD = ITEMS.registerItem("inox_sword",
+            properties -> new Item(properties.sword(ModToolTiers.INOX, 3, -2.4f)));
+    public static final DeferredItem<Item> INOX_PICKAXE = ITEMS.registerItem("inox_pickaxe",
+            properties -> new Item(properties.pickaxe(ModToolTiers.INOX, 1, -2.8f)));
+    public static final DeferredItem<Item> INOX_SHOVEL = ITEMS.registerItem("inox_shovel",
+            properties -> new ShovelItem(ModToolTiers.INOX, 1.5f, -3.0f, properties));
+    public static final DeferredItem<Item> INOX_AXE = ITEMS.registerItem("inox_axe",
+            properties -> new AxeItem(ModToolTiers.INOX, 6, -3.2f, properties));
+    public static final DeferredItem<Item> INOX_HOE = ITEMS.registerItem("inox_hoe",
+            properties -> new HoeItem(ModToolTiers.INOX, 0, -3.0f, properties));
+    public static final DeferredItem<Item> INOX_SPEAR = ITEMS.registerItem("inox_spear",
+            properties -> new Item(properties.spear(ModToolTiers.INOX, 0.95f, 0.7f, 0.7f,
+                    3.5f, 13f, 8.5f, 5.1f, 13.37f, 4.67f)));
+//TODO changer les valeurs de la spear
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

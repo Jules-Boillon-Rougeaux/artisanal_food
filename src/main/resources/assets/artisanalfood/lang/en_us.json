@@ -38,7 +38,12 @@
   "item.artisanalfood.grilled_tentacle": "Grilled Squid tentacle",
   "item.artisanalfood.candy_apple": "Candy apple",
   "item.artisanalfood.salted_cod": "Salted Cod",
-
+  "item.artisanalfood.inox_sword": "Inox Sword",
+  "item.artisanalfood.inox_pickaxe": "Inox Pickaxe",
+  "item.artisanalfood.inox_shovel": "Inox Shovel",
+  "item.artisanalfood.inox_axe": "Inox Axe",
+  "item.artisanalfood.inox_hoe": "Inox Hoe",
+  "item.artisanalfood.inox_spear": "Inox Spear",
 
   "block.artisanalfood.charcoal_block": "Block of Charcoal",
   "block.artisanalfood.salt_ore": "Salt Ore",

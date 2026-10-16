@@ -39,6 +39,13 @@
   "item.artisanalfood.candy_apple": "Pomme d'amour",
   "item.artisanalfood.salted_cod": "Morue",
 
+  "item.artisanalfood.inox_sword": "Épée en inox",
+  "item.artisanalfood.inox_pickaxe": "Pioche en inox",
+  "item.artisanalfood.inox_shovel": "Pelle en inox",
+  "item.artisanalfood.inox_axe": "Hache en inox",
+  "item.artisanalfood.inox_hoe": "Houe en inox",
+  "item.artisanalfood.inox_spear": "Lance en inox",
+
   "block.artisanalfood.charcoal_block": "Bloc de charbon de bois",
   "block.artisanalfood.salt_ore": "Minerai de sel",
   "block.artisanalfood.deepslate_salt_ore": "Minerai de sel des abîmes",

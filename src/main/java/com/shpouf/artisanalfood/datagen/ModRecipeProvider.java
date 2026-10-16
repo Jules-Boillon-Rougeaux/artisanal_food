@@ -92,6 +92,73 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(Items.APPLE), has(Items.APPLE))
                 .group(getItemName(ModItems.CANDY_APPLE))
                 .save(output);
+        //TODO change the letter for the first
+
+        shaped(RecipeCategory.COMBAT, ModItems.INOX_SWORD.get())
+                .pattern("I")
+                .pattern("I")
+                .pattern("S")
+                .define('I', ModItems.INOX_INGOT.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItems.INOX_INGOT.get()), has(ModItems.INOX_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .group(getItemName(ModItems.INOX_SWORD))
+                .save(output);
+
+        shaped(RecipeCategory.TOOLS, ModItems.INOX_PICKAXE.get())
+                .pattern("III")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('I', ModItems.INOX_INGOT.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItems.INOX_INGOT.get()), has(ModItems.INOX_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .group(getItemName(ModItems.INOX_PICKAXE))
+                .save(output);
+
+        shaped(RecipeCategory.TOOLS, ModItems.INOX_SHOVEL.get())
+                .pattern("I")
+                .pattern("S")
+                .pattern("S")
+                .define('I', ModItems.INOX_INGOT.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItems.INOX_INGOT.get()), has(ModItems.INOX_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .group(getItemName(ModItems.INOX_SHOVEL))
+                .save(output);
+
+        shaped(RecipeCategory.TOOLS, ModItems.INOX_AXE.get())
+                .pattern("II")
+                .pattern("SI")
+                .pattern("S ")
+                .define('I', ModItems.INOX_INGOT.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItems.INOX_INGOT.get()), has(ModItems.INOX_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .group(getItemName(ModItems.INOX_AXE))
+                .save(output);
+
+        shaped(RecipeCategory.TOOLS, ModItems.INOX_HOE.get())
+                .pattern("II")
+                .pattern("S ")
+                .pattern("S ")
+                .define('I', ModItems.INOX_INGOT.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItems.INOX_INGOT.get()), has(ModItems.INOX_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .group(getItemName(ModItems.INOX_HOE))
+                .save(output);
+
+        shaped(RecipeCategory.COMBAT, ModItems.INOX_SPEAR.get())
+                .pattern("  I")
+                .pattern(" S ")
+                .pattern("S  ")
+                .define('I', ModItems.INOX_INGOT.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItems.INOX_INGOT.get()), has(ModItems.INOX_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .group(getItemName(ModItems.INOX_SPEAR))
+                .save(output);
 
         //  Shapeless
         addSimpleShapelessRecipe(ModBlocks.CHARCOAL_BLOCK.get(), List.of(Items.CHARCOAL), 1, List.of(9), "coal_block", "charcoal");

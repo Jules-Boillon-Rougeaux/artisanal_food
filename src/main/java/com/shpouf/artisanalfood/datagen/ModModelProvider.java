@@ -41,6 +41,7 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.CORNSTARCH.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RAMEKIN.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.WHEAT_FLOUR.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.INOX_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SALT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SPARKLING_POWDER.get(), ModelTemplates.FLAT_ITEM);
 
@@ -94,6 +95,14 @@ public class ModModelProvider extends ModelProvider {
         createEasyCropCrossBlock(blockModels, ModBlocks.GARLIC_CROP.get());
         createEasyCropCrossBlock(blockModels, ModBlocks.TOMATO_CROP.get());
         createEasyCropCrossBlock(blockModels, ModBlocks.LEEK_CROP.get());
+
+        itemModels.generateFlatItem(ModItems.INOX_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.INOX_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.INOX_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.INOX_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.INOX_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateSpear(ModItems.INOX_SPEAR.get());
+
     }
 
     private static void createEasyCropBlock(BlockModelGenerators blockModels, CustomCropBlock block) {

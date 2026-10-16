@@ -2,6 +2,7 @@ package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
 import com.shpouf.artisanalfood.item.ModItems;
+import com.shpouf.artisanalfood.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
@@ -111,5 +112,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(Tags.Items.FOODS_COOKED_FISH)
                 .add(ModItems.GRILLED_SARDINE.get())
                 .add(ModItems.GRILLED_TENTACLE.get());
+
+        tag(ModTags.Items.INOX_REPAIRABLE)
+                .add(ModItems.INOX_INGOT.get());
+
+        tag(ItemTags.SWORDS).add(ModItems.INOX_SWORD.get());
+        tag(ItemTags.PICKAXES).add(ModItems.INOX_PICKAXE.get());
+        tag(ItemTags.SHOVELS).add(ModItems.INOX_SHOVEL.get());
+        tag(ItemTags.AXES).add(ModItems.INOX_AXE.get());
+        tag(ItemTags.HOES).add(ModItems.INOX_HOE.get());
+        tag(ItemTags.SPEARS).add(ModItems.INOX_SPEAR.get());
+
     }
 }

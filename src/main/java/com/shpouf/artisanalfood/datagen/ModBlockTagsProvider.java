@@ -2,6 +2,7 @@ package com.shpouf.artisanalfood.datagen;
 
 import com.shpouf.artisanalfood.ArtisanalFood;
 import com.shpouf.artisanalfood.block.ModBlocks;
+import com.shpouf.artisanalfood.tags.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -35,7 +36,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.SALT_BRICKS_SLAB.get())
                 .add(ModBlocks.SALT_BRICKS_WALL.get());
 
-        tag(BlockTags.NEEDS_STONE_TOOL)
+
+        tag(ModTags.Blocks.NEEDS_INOX_TOOL)
                 .add(ModBlocks.SALT_ORE.get())
                 .add(ModBlocks.DEEPSLATE_SALT_ORE.get())
                 .add(ModBlocks.SALT_BLOCK.get())
@@ -50,8 +52,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_SALT_WALL.get())
                 .add(ModBlocks.SALT_BRICKS_STAIRS.get())
                 .add(ModBlocks.SALT_BRICKS_SLAB.get())
-                .add(ModBlocks.SALT_BRICKS_WALL.get());
+                .add(ModBlocks.SALT_BRICKS_WALL.get())
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
 
+        tag(ModTags.Blocks.INCORRECT_FOR_INOX_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .remove(ModTags.Blocks.NEEDS_INOX_TOOL);
 
         tag(BlockTags.STAIRS)
                 .add(ModBlocks.SALT_STAIRS.get())
